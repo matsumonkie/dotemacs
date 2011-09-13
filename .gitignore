@@ -1,0 +1,5 @@
+# no elisp compiled source
+*.elc
+
+# last place of the cursor
+saveplace

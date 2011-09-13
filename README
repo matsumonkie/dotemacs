@@ -1,0 +1,27 @@
+;;                                                                         __
+;;  _ __ ___  _   _      ___ _ __ ___   __ _  ___ ___      ___ ___  _ __  / _|
+;; | '_ ` _ \| | | |    / _ \ '_ ` _ \ / _` |/ __/ __|    / __/ _ \| '_ \| |_ 
+;; | | | | | | |_| |   |  __/ | | | | | (_| | (__\__ \   | (_| (_) | | | |  _|
+;; |_| |_| |_|\__, |    \___|_| |_| |_|\__,_|\___|___/    \___\___/|_| |_|_|
+;;            |___/                                                           
+
+;; This repository contains my configuration for emacs editor.
+;; Copyright (C) 2011 matsuhara
+;; 
+;; This file is free software: you can redistribute it and/or modify
+;; it under the terms of the GNU General Public License as published by
+;; the Free Software Foundation, either version 3 of the License, or
+;; (at your option) any later version.
+;; 
+;; This program is distributed in the hope that it will be useful,
+;; but WITHOUT ANY WARRANTY; without even the implied warranty of
+;; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+;; GNU General Public License for more details.
+;; 
+;; You should have received a copy of the GNU General Public License
+;; along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+
+;; It works well with emacs 23.
+;; I am developping with the french "dvorak bépo" keyboard layout so every shortcuts have been changed.
+;; Hope you will find something useful ;-)
