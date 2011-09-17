@@ -121,6 +121,9 @@
 
 ;; Allow narrowing region
 (put 'narrow-to-region 'disabled nil)
+;; Allow downcase-region
+(put 'downcase-region 'disabled nil)
+
 
 
 ;; Cat & mouse

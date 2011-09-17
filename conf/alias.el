@@ -1,8 +1,8 @@
 ;; Upcase / downcase
-(defalias 'ucr 'upcase-region)
-(defalias 'ucw 'upcase-word)
-(defalias 'dcr 'downcase-region)
-(defalias 'dcw 'downcase-word)
+(defalias 'ur 'upcase-region)
+(defalias 'uw 'upcase-word)
+(defalias 'dr 'downcase-region)
+(defalias 'dw 'downcase-word)
 
 (defalias 'eb 'eval-buffer)
 
