@@ -111,6 +111,7 @@
       ("\\.h$"    . c++-mode)
        ("\\.m$"    . objc-mode)
        ("\\.java$" . java-mode)
+;       ("\\.tex$" . latex-mode)
      ) auto-mode-alist))
 
 ;; reutiliser le meme buffer pour compiler par exemple, ne pas ouvrir un autre buffer dans une autre frame a
