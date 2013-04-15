@@ -30,7 +30,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key [f4] 'kill-emacs)
 (global-set-key (kbd "C-S-q") 'my-kill-buffer)
-;(global-set-key (kbd "C-SPC q") 'save-buffers-kill-emacs)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; BUFFER MENU
@@ -78,23 +77,35 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; KILL WORD/LINE
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(global-set-key "\C-t" 	  'backward-kill-word)
-(global-set-key "\M-t" 	  'my-backward-kill-line)
-(global-set-key "\M-c" 	  'my-kill-line)
-(global-set-key "\M-\S-c" 'kill-whole-line)
+
+;; Hack to solve problem for tab and C-i
+(global-set-key "\t" 'self-insert-command)
+(keyboard-translate ?\C-i ?\M-|)
+(global-set-key [?\M-|] 'backward-kill-word)
+
+(defvar my-indentation-width 2)
+(setq indent-tabs-mode nil)
+
+					
+;;(local-set-key [tab] 'tab-to-tab-stop)
+;;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
+
+(global-set-key "\C-u" 	  'kill-word)
+(global-set-key "\M-i" 	  'my-backward-kill-line)
+(global-set-key "\M-u" 	  'my-kill-line)
 (global-set-key [delete] 'delete-char) ;; delete standard behaviour
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; COPY / CUT / PASTE
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+;; COPY / CUT / PASTE ;;
+;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-SPC c") 'clipboard-kill-ring-save)
 (global-set-key (kbd "C-SPC d") 'kill-region)
 (global-set-key (kbd "C-v") 	'yank)
 (global-set-key (kbd "M-v") 	'yank-pop)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; RECTANGLES
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;
+;; RECTANGLES ;;
+;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-SPC r c") 'delete-rectangle)    ;; supprime un rectangle en l'enregistrant
 (global-set-key (kbd "C-SPC r v") 'yank-rectangle)   	;; insère le dernier rectangle enregistré
 (global-set-key (kbd "C-SPC r o") 'open-rectangle)   	;; insère un rectangle de blancs
@@ -102,37 +113,37 @@
 (global-set-key (kbd "C-SPC r t") 'string-rectangle)   	;; insérer un string dans un rectangle
 
 
-
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;; DISPLACEMENT ;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;;;;;;;;;;;;;;;
+;; DISPLACEMENT ;;
+;;;;;;;;;;;;;;;;;;
 
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; WORD
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;
+;; WORD ;;
+;;;;;;;;;;
+
 ;; PAGE
-(global-set-key "\C-r" 'forward-word)
-(global-set-key "\C-s" 'backward-word)
+(global-set-key "\C-n" 'forward-word)
+(global-set-key "\C-t" 'backward-word)
+
 ;; PARAGRAPH
-(global-set-key "\M-i" 'backward-paragraph)
-(global-set-key "\M-u" 'forward-paragraph)
+(global-set-key "\C-d" 'backward-paragraph)
+(global-set-key "\C-l" 'forward-paragraph)
+
 ;; BUFFER
-(global-set-key "\M-a" 'beginning-of-buffer)
-(global-set-key "\M-n" 'end-of-buffer)
+(global-set-key "\M-d" 'beginning-of-buffer)
+(global-set-key "\M-l" 'end-of-buffer)
+
 ;; PAGE
-(global-set-key "\C-n" 'scroll-up-half)
-(global-set-key "\C-a" 'scroll-down-half)
+;;(global-set-key "\C-n" 'scroll-up-half)
+;;(global-set-key "\C-a" 'scroll-down-half)
 
 
 
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; ;;;;;;;;;;; DEV ;;;;;;;;;;;;;;
-;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;
+;; DEV ;;
+;;;;;;;;;
 
-
-(global-set-key "\M-h" 'insert-comment)
 
 (define-key global-map (kbd "C-SPC .") 'comment-line)
 (define-key global-map (kbd "C-SPC :") 'uncomment-line)
@@ -144,7 +155,7 @@
 (global-set-key (kbd "C-SPC C-c")  'comment-region)
 (global-set-key (kbd "C-SPC C-u")  'uncomment-region)
 
-;; Spécificité console/interface graphique
+;; Behaviour for emacs in terminal
 (if (display-graphic-p)
     (progn
       ;; shortcut terminator like :)
@@ -159,23 +170,21 @@
   (global-unset-key (kbd "C-@"))
   (global-set-key (kbd "C-@") 'Control-X-prefix))
 
-;; Hack to solve problem for tab and C-i
-(keyboard-translate ?\C-i ?\C-|)
-(global-set-key (kbd "C-|") 'backward-char)
+
 ;; Same with return and C-m
-(keyboard-translate ?\C-m ?\C-&)
-(global-set-key (kbd "C-&") 'newline-and-indent)
+;(keyboard-translate ?\C-m ?\C-&)
+;(global-set-key (kbd "C-&") 'newline-and-indent)
 ;; Same with C-c which is a prefix key
-(keyboard-translate ?\C-c ?\C-.)
-(global-set-key (kbd "C-.") 'kill-word)
+;(keyboard-translate ?\C-c ?\C-.)
+;(global-set-key (kbd "C-.") 'kill-word)
 
 ;; Go 2 lines up or down
-(global-set-key (kbd "C-|") 'scroll-up-lot)
-(global-set-key (kbd "\C-u") 'scroll-down-lot)
+(global-set-key (kbd "\C-s") 'scroll-up-lot)
+(global-set-key (kbd "\C-r") 'scroll-down-lot)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Completion automatique
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Completion automatique ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key [(f1)] 'dabbrev-completion)
 (global-set-key (kbd "C-q") 'dabbrev-expand)
 (global-set-key (kbd "M-q") 'dabbrev-completion)
@@ -186,51 +195,36 @@
 (global-set-key "\M-s" 'tabbar-backward-tab)
 (global-set-key "\M-r" 'tabbar-forward-tab)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Recherche 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;
+;; Recherche ;;
+;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-f") 'isearch-forward)
 (global-set-key (kbd "M-f") 'isearch-backward)
 (define-key isearch-mode-map "\C-f" 'isearch-repeat-forward)
 (define-key isearch-mode-map "\M-f" 'isearch-repeat-backward)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; RECENTER
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;
+;; RECENTER ;;
+;;;;;;;;;;;;;;
 (global-set-key (kbd "C-S-l") 'my-horizontal-recenter)
-(global-set-key (kbd "M-l")   'my-middle-of-buffer)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ne detruit pas le serveur si le fichier dans lequel on se trouve est un client
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-SPC q") 'intelligent-close)
 
-(global-set-key [f12] 'toggle-fullscreen)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Bookmark
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;(global-set-key (kbd "C-b") 'bookmark-set)
-(global-set-key (kbd "C-j") 'bookmark-jump)
-(global-set-key (kbd "C-b") 'bm-toggle)
-(global-set-key (kbd "C-j") 'bm-next)
-(global-set-key (kbd "M-j") 'bm-previous)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; iBuffer
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;
+;; iBuffer ;;
+;;;;;;;;;;;;;
 (global-set-key (kbd "C-SPC C-b") 'ibuffer)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Agrandir/réduire les frames
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;
+;; FRAME SCALING ;;
+;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-M-<left>")  'shrink-window-horizontally)
 (global-set-key (kbd "C-M-<right>") 'enlarge-window-horizontally)
 (global-set-key (kbd "C-M-<down>")  'shrink-window)
 (global-set-key (kbd "C-M-<up>")    'enlarge-window)
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Compile
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;
+;; Compile ;;
+;;;;;;;;;;;;;
 (global-set-key (kbd "C-p")  'tex-compile)

@@ -7,7 +7,6 @@
 (defun my-c++-style-hook ()
   "set behaviour and style for c/c++ mode"
 
-
   ;; Style d'indentation Allman
   (c-set-style "bsd") 
   ;; Le pas d'indentation du code C/C++ est de 4 espaces

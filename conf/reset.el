@@ -10,7 +10,7 @@
 (global-unset-key "\C-f")
 (global-unset-key "\C-g")
 ;;(global-unset-key "\C-h") aide
-;;(global-unset-key "\C-i") associé par le système a tabulation
+;(global-unset-key "\C-i") associé par le système a tabulation
 (global-unset-key "\C-j")
 (global-unset-key "\C-k")
 ;(global-unset-key "\C-l") recenter-top-bottom
