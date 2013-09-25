@@ -4,33 +4,26 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Backup in specified folder
-(if (file-exists-p "~/.emacs.d/backups")
-(setq backup-directory-alist `(("." . "~/.emacs.d/backups"))))
+(setq backup-directory "~/.emacs.d/backups")
+(unless (file-exists-p backup-directory)
+  (make-directory backup-directory))
+(setq backup-directory-alist `(("." . backup-directory)))
 
 ;; No ~ backup
-(setq make-backup-files nil)
+;(setq make-backup-files nil)
 (setq version-control t)
-(setq auto-save-list-file-name  nil) ; Don't want any .saves files
-(setq auto-save-default         nil) ; Don't want any auto saving 
+;(setq auto-save-list-file-name  nil) ; Don't want any .saves files
+;(setq auto-save-default         nil) ; Don't want any auto saving 
 ;; Otherwise it keeps asking
 (setq kept-new-versions 30)
 (setq delete-old-versions t)
 
 ;; UTF-8
-(set-language-environment 'utf-8)
+(set-language-environment   'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
-(set-language-environment 'utf-8)
-(prefer-coding-system 'utf-8)
-
-;; Par défaut, lorsqu'Emacs est lancé dans un terminal, il ne s'adapte
-;; pas à la configuration du terminal et du clavier et ne procède donc
-;; à aucune conversion des entrées/sorties. Les lignes ci-dessous lui
-;; demandent de le faire en se basant sur les locales.
-;(when (not window-system)
-;  (set-language-environment locale-coding-system)
-;  (set-keyboard-coding-system locale-coding-system)
-;  (set-terminal-coding-system locale-coding-system))
+(set-language-environment   'utf-8)
+(prefer-coding-system       'utf-8)
 
 ;; No carriage return for long line 
 (if (boundp 'truncate-lines)
@@ -41,13 +34,13 @@
     (setq automatic-hscrolling t)))
 
 ;; le contenu se déplace d'une seule ligne en fin de fenetre 
-(setq scroll-step 1)
+;(setq scroll-step 1)
 
 ;; No visual alert
 (setq visible-bell 'nil)
 
 ;; Cursor position fixed when page is scrolled
-(setq scroll-preserve-screen-position t)
+;(setq scroll-preserve-screen-position t)
 
 ; Save cursor position and load it automatically when opening file
 (setq save-place-file "~/.emacs.d/saveplace")

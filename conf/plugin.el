@@ -16,7 +16,7 @@
 (require 'tabbar)
 (tabbar-mode)
 (setq
-	tabbar-scroll-left-help-function nil   ;don't show help information
+	tabbar-scroll-left-help-function nil   ; don't show help information
 	tabbar-scroll-right-help-function nil
 	tabbar-help-on-tab-function nil
 	tabbar-home-help-function nil

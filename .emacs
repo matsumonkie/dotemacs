@@ -1,27 +1,25 @@
-(defvar my-conf t)
+(defvar load-my-conf t)
 
-(when my-conf
+(when load-my-conf
   (message "\n -- Loading personnal configuration --\n")
 
   ;; auto compile elisp configuration files after save
   (add-hook 'emacs-lisp-mode-hook (lambda () (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)) )
     
-  ;; Emacs load path
-  (setq load-path (cons "~/.emacs.d/conf/" load-path))
-  
-  (defvar *emacs-load-start* (current-time))
-  (defvar files-to-load (list "appearance" "reset" "plugin" "function" "shortcut"  "system"  "dev" "alias"))
+  (defvar my-conf-path "~/.emacs.d/conf")
+  (defvar load-path (cons my-conf-path load-path))  
+  (defvar files-to-load (list "appearance" "reset" "plugin" "function" "shortcut" "system" "dev" "alias")) 
     
-  (defun init-conf (list-files)
+  (defun init-conf (files)
     "Load configuration files"
-    (if (car list-files)
+    (mapcar (lambda (file)
 	(progn 
-	  (setq f (car list-files))
-	  (if (file-exists-p (concat "~/.emacs.d/conf/" f ".el"))
-		(load (concat f ".el")))
-	  (init-conf (cdr list-files)))))
+	  (setq filename (concat my-conf-path "/" file ".el"))
+	  (if (file-exists-p filename) (load filename))))
+	    files-to-load))
+	  
 
   (init-conf files-to-load)
   
-  (message "\n -- configuration setup ! --\n"))
+  (message "\n -- personnal configuration setup ! --\n"))
 

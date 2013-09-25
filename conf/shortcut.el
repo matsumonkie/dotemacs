@@ -86,10 +86,6 @@
 (defvar my-indentation-width 2)
 (setq indent-tabs-mode nil)
 
-					
-;;(local-set-key [tab] 'tab-to-tab-stop)
-;;(global-set-key (kbd "TAB") 'tab-to-tab-stop)
-
 (global-set-key "\C-u" 	  'kill-word)
 (global-set-key "\M-i" 	  'my-backward-kill-line)
 (global-set-key "\M-u" 	  'my-kill-line)
@@ -172,8 +168,9 @@
 
 
 ;; Same with return and C-m
-;(keyboard-translate ?\C-m ?\C-&)
-;(global-set-key (kbd "C-&") 'newline-and-indent)
+(keyboard-translate ?\C-m ?\C-&)
+(global-set-key (kbd "C-&") 'newline-and-indent)
+(global-set-key (kbd "RET") 'newline-and-indent)
 ;; Same with C-c which is a prefix key
 ;(keyboard-translate ?\C-c ?\C-.)
 ;(global-set-key (kbd "C-.") 'kill-word)
@@ -227,4 +224,4 @@
 ;;;;;;;;;;;;;
 ;; Compile ;;
 ;;;;;;;;;;;;;
-(global-set-key (kbd "C-p")  'tex-compile)
+(global-set-key (kbd "C-p")  'recenter-top-bottom)

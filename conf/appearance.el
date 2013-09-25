@@ -15,7 +15,7 @@
 (column-number-mode t)
 (line-number-mode t)
 
-;; Blinking cursor
+;; No blinking cursor
 (blink-cursor-mode -1)
 
 ;; Frame name = edited file name
