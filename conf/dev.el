@@ -3,7 +3,6 @@
 ;; ------------------------------
 
 
-
 (defun my-c++-style-hook ()
   "set behaviour and style for c/c++ mode"
 
@@ -21,7 +20,6 @@
   (setq c++-tab-always-indent t)
   (setq c-continued-statement-offset 4)
   (setq c++-empty-arglist-indent 4)
-
 )
 
 (defun my-c++-shortcut-hook ()
@@ -41,7 +39,6 @@
    
   (local-set-key (kbd "C-SPC s") 'my-format-line)
   (local-set-key (kbd "C-SPC i") 'my-indent-line)
-
 )
 
 
