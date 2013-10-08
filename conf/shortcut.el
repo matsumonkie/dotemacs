@@ -78,7 +78,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Hack to solve problem for tab and C-i
-(global-set-key "\t" 'self-insert-command)
+;(global-set-key "\t" 'self-insert-command)
+(global-set-key (kbd "C-i") 'backward-kill-word)
+(global-set-key (kbd "¿") 'tab-to-tab-stop)
 ;(keyboard-translate ?\C-i ?\M-|)
 ;(global-set-key [?\M-|] 'backward-kill-word)
 ;(global-set-key "¿" 'tab-to-tab-stop)

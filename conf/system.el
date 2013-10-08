@@ -63,10 +63,10 @@
 ;; Corresponding parentheses shown
 (require 'paren)
 (show-paren-mode t)
-(setq blink-matching-paren t)
-(setq blink-matching-paren-on-screen t) 
-(setq blink-matching-paren-dont-ignore-comments t)
-(set-face-background 'show-paren-match-face "grey")
+(setq blink-matching-paren t
+ blink-matching-paren-on-screen t
+ blink-matching-paren-dont-ignore-comments t)
+(set-face-background 'show-paren-match-face "green")
 
 ;; Automatic completion
 (require 'dabbrev)
