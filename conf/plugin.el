@@ -2,15 +2,14 @@
 (setq plugins-folder (expand-file-name "~/.emacs.d/plugins"))
 (add-to-list 'load-path plugins-folder)
 
-;; Linum visible in all modes
-(load "linum.el")
-(require 'linum)
+;; Linum+ visible in all modes
+(require 'linum+)
 (global-linum-mode 1) 
 
 ;; Yasnippet
+(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
 (require 'yasnippet)
-(yas/initialize)
-(yas/load-directory "~/.emacs.d/plugins/yasnippet/snippets")
+(yas-global-mode 1)
 
 ;; Tabbar
 (require 'tabbar)
@@ -32,8 +31,5 @@
 (set-face-attribute 'tabbar-button	nil :box '(:line-width 1 :color "gray72" :style released-button))
 (set-face-attribute 'tabbar-separator	nil :height 0.7)
 
+;; Redo +
 (require 'redo+)
-
-;; FUN
-;; M-x animate-birthday-present
-;; M-x butterfly

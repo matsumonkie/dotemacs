@@ -79,9 +79,9 @@
 
 ;; Hack to solve problem for tab and C-i
 (global-set-key "\t" 'self-insert-command)
-(keyboard-translate ?\C-i ?\M-|)
-(global-set-key [?\M-|] 'backward-kill-word)
-(global-set-key "¿" 'tab-to-tab-stop)
+;(keyboard-translate ?\C-i ?\M-|)
+;(global-set-key [?\M-|] 'backward-kill-word)
+;(global-set-key "¿" 'tab-to-tab-stop)
 
 (global-set-key "\C-u" 	  'kill-word)
 (global-set-key "\M-i" 	  'my-backward-kill-line)
@@ -165,9 +165,9 @@
 
 
 ;; Same with return and C-m
-(keyboard-translate ?\C-m ?\C-&)
-(global-set-key (kbd "C-&") 'newline-and-indent)
-(global-set-key (kbd "RET") 'newline-and-indent)
+;(keyboard-translate ?\C-m ?\C-&)
+;(global-set-key (kbd "C-&") 'newline-and-indent)
+;(global-set-key (kbd "RET") 'newline-and-indent)
 ;; Same with C-c which is a prefix key
 ;(keyboard-translate ?\C-c ?\C-.)
 ;(global-set-key (kbd "C-.") 'kill-word)
