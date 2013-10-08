@@ -32,3 +32,10 @@
 ;; Underline current line
 (global-hl-line-mode 1)
 (set-face-background 'highlight "#5a5c59")
+
+;; Nyan cat mode when graphic mode
+(if (display-graphic-p)
+   (progn
+     (add-to-list 'load-path (concat user-emacs-directory "themes/nyancat-mode"))
+     (require 'nyan-mode)
+     (nyan-mode)))

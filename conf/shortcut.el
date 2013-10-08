@@ -35,7 +35,6 @@
 ;; BUFFER MENU
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key [f7] 'buffer-menu)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; GOTO
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -82,9 +81,7 @@
 (global-set-key "\t" 'self-insert-command)
 (keyboard-translate ?\C-i ?\M-|)
 (global-set-key [?\M-|] 'backward-kill-word)
-
-(defvar my-indentation-width 2)
-(setq indent-tabs-mode nil)
+(global-set-key "¿" 'tab-to-tab-stop)
 
 (global-set-key "\C-u" 	  'kill-word)
 (global-set-key "\M-i" 	  'my-backward-kill-line)
@@ -153,7 +150,7 @@
 
 ;; Behaviour for emacs in terminal
 (if (display-graphic-p)
-    (progn
+   (progn
       ;; shortcut terminator like :)
       (global-set-key (kbd "C-S-h") 'split-window-vertically)
       (global-set-key (kbd "C-S-v") 'split-window-horizontally)

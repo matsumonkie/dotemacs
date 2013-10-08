@@ -3,20 +3,21 @@
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
-;; Backup in specified folder
-(setq backup-directory "~/.emacs.d/backups")
-(unless (file-exists-p backup-directory)
-  (make-directory backup-directory))
-(setq backup-directory-alist `(("." . backup-directory)))
-
-;; No ~ backup
-;(setq make-backup-files nil)
-(setq version-control t)
-;(setq auto-save-list-file-name  nil) ; Don't want any .saves files
-;(setq auto-save-default         nil) ; Don't want any auto saving 
-;; Otherwise it keeps asking
-(setq kept-new-versions 30)
-(setq delete-old-versions t)
+;; BACKUP
+(defvar my-backup-directory (concat user-emacs-directory "backups"))
+(unless (file-exists-p my-backup-directory)
+  (make-directory my-backup-directory))
+(setq backup-directory-alist
+  `((".*" . ,my-backup-directory)))
+(setq delete-old-versions t
+      backup-by-copying t          ; copy rather than rename, slower but simpler
+      kept-new-versions 6
+      kept-old-versions 2
+      version-control t            ; version numbers for backup file
+      delete-old-versions t 
+      delete-by-moving-to-trash t
+      auto-save-default nil        ; no #file# backups
+      )
 
 ;; UTF-8
 (set-language-environment   'utf-8)
@@ -43,11 +44,11 @@
 ;(setq scroll-preserve-screen-position t)
 
 ; Save cursor position and load it automatically when opening file
-(setq save-place-file "~/.emacs.d/saveplace")
+(setq save-place-file (concat user-emacs-directory "saveplace"))
 (setq-default save-place t)
 (require 'saveplace)
 
-;; Find not case sensitive
+;; Find case sensitive
 (setq case-fold-search nil)
 
 ;; Selection can be overwrite 
@@ -94,3 +95,6 @@
 
 ;; Allow downcase-region
 (put 'downcase-region 'disabled nil)
+
+;; Indent with space only
+(setq-default indent-tabs-mode nil)
