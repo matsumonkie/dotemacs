@@ -9,6 +9,8 @@
   (make-directory my-backup-directory))
 (setq backup-directory-alist
   `((".*" . ,my-backup-directory)))
+(setq auto-save-file-name-transforms
+  `((".*" ,my-backup-directory t)))
 (setq delete-old-versions t
       backup-by-copying t          ; copy rather than rename, slower but simpler
       kept-new-versions 6
