@@ -79,8 +79,17 @@
 
 ;; Hack to solve problem for tab and C-i
 ;(global-set-key "\t" 'self-insert-command)
+
+;(setq local-function-key-map (delq '(kp-tab . [9]) local-function-key-map))
+;(global-set-key (kbd "<tab>") (lambda () (interactive) (message "tab1")))
+;(global-set-key (kbd "C-i") (lambda () (interactive) (message "tab2"))) 
+
+;(define-key input-decode-map (kbd "C-i") (kbd "H-i"))
+;(global-set-key (kbd "H-i") (lambda () (interactive) (message "taba")))
+
 (global-set-key (kbd "C-i") 'backward-kill-word)
 (global-set-key (kbd "¿") 'tab-to-tab-stop)
+
 ;(keyboard-translate ?\C-i ?\M-|)
 ;(global-set-key [?\M-|] 'backward-kill-word)
 ;(global-set-key "¿" 'tab-to-tab-stop)
@@ -130,8 +139,8 @@
 (global-set-key "\M-l" 'end-of-buffer)
 
 ;; PAGE
-;;(global-set-key "\C-n" 'scroll-up-half)
-;;(global-set-key "\C-a" 'scroll-down-half)
+(global-set-key "\M-t" 'scroll-down-command)
+(global-set-key "\M-n" 'scroll-up-command)
 
 
 
