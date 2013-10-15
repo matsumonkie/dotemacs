@@ -33,3 +33,8 @@
 
 ;; Redo +
 (require 'redo+)
+
+;; Key chord
+(add-to-list 'load-path "~/.emacs.d/plugins/chord.el")
+(require 'key-chord)
+(key-chord-mode 1)

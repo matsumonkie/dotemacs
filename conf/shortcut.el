@@ -102,6 +102,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;; COPY / CUT / PASTE ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
+
 (global-set-key (kbd "C-SPC c") 'clipboard-kill-ring-save)
 (global-set-key (kbd "C-SPC d") 'kill-region)
 (global-set-key (kbd "C-v") 	'yank)

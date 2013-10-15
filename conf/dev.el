@@ -27,9 +27,5 @@
   (require 'whitespace)
   (make-local-variable 'before-save-hook)
   (add-hook 'before-save-hook 'whitespace-cleanup)
-))
 
-;; Ensime
-(add-to-list 'load-path (concat user-emacs-directory "plugins/ensime/elisp/"))
-(require 'ensime)
-(add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+))
