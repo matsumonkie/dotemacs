@@ -3,6 +3,10 @@
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Opening file side by side rather than onTop/below
+(setq split-height-threshold nil) 
+(setq split-width-threshold 0) 
+
 ;; BACKUP
 (defvar my-backup-directory (concat user-emacs-directory "backups"))
 (unless (file-exists-p my-backup-directory)
