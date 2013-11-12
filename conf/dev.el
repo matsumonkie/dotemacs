@@ -29,3 +29,8 @@
   (add-hook 'before-save-hook 'whitespace-cleanup)
 
 ))
+
+;; Enhanced Ruby Mode
+(add-to-list 'load-path 
+  "~/.emacs.d/plugins/Enhanced-Ruby-Mode")
+(require 'ruby-mode)
