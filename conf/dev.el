@@ -34,3 +34,7 @@
 (add-to-list 'load-path 
   "~/.emacs.d/plugins/Enhanced-Ruby-Mode")
 (require 'ruby-mode)
+
+(defun set-newline-and-indent ()
+  (local-set-key (kbd "RET") 'newline-and-indent))
+(add-hook 'ruby-mode-hook 'set-newline-and-indent)
