@@ -21,3 +21,12 @@
   (insert "end")
   (ruby-indent-line t)
   (end-of-line))
+
+;; RSense
+(install-package 'rsense)
+(require 'rsense)
+
+;; Rinari
+(install-package 'rinari)
+(require 'rinari)
+(global-rinari-mode)
