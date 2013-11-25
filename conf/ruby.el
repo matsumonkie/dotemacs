@@ -30,3 +30,10 @@
 (install-package 'rinari)
 (require 'rinari)
 (global-rinari-mode)
+
+(add-hook 'rinari-minor-mode-hook (lambda()
+  (local-set-key (kbd "C-c c") 'rinari-find-controller)
+  (local-set-key (kbd "C-c m") 'rinari-find-model)
+  (local-set-key (kbd "C-c v") 'rinari-find-view)
+  (local-set-key (kbd "C-c f") 'rinari-find-file-in-project)
+))
