@@ -13,10 +13,12 @@
 (global-linum-mode 1) 
 
 ;; Yasnippet
-(add-to-list 'load-path "~/.emacs.d/plugins/yasnippet")
+(install-package 'yasnippet)
 (require 'yasnippet)
+(yas-load-directory "~/.emacs.d/plugins/yasnippet/snippets/yasnippets-rails/")
 (yas-global-mode 1)
 
+;; Tabbar
 (if (display-graphic-p)
     (progn
       (require 'tabbar)
