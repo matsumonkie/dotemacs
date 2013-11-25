@@ -48,3 +48,6 @@
 (require 'nav)
 (nav-disable-overeager-window-splitting)
 (global-set-key [f8] 'nav-toggle)
+
+(require 'ido)
+(ido-mode t)

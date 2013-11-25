@@ -104,3 +104,6 @@
 
 ;; Indent with space only
 (setq-default indent-tabs-mode nil)
+
+;; No scratch buffer
+(kill-buffer "*scratch*")
