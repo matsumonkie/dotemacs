@@ -49,9 +49,15 @@
 (nav-disable-overeager-window-splitting)
 (global-set-key [f8] 'nav-toggle)
 
+;; ido
 (require 'ido)
 (ido-mode t)
 
+;; Find all files in project
 (install-package 'find-file-in-project)
 (require 'find-file-in-project)
 (global-set-key (kbd "C-SPC a") 'find-file-in-project)
+(defvar ffip-patterns
+  '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.clj" "*.py" "*.rb" "*.js" "*.pl"
+    "*.sh" "*.erl" "*.hs" "*.ml" "*.erb")
+"List of patterns to look for with `find-file-in-project'.")
