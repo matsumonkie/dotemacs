@@ -51,3 +51,7 @@
 
 (require 'ido)
 (ido-mode t)
+
+(install-package 'find-file-in-project)
+(require 'find-file-in-project)
+(global-set-key (kbd "C-SPC a") 'find-file-in-project)
