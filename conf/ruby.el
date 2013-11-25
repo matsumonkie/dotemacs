@@ -8,10 +8,6 @@
 
 ;; HAML mode
 (install-package 'haml-mode)
-(add-hook 'haml-mode-hook
-          (lambda ()
-            (setq indent-tabs-mode nil)
-            (local-set-key (kbd "RET") 'newline-and-indent)))
 
 ;; Ruby electric mode
 (install-package 'ruby-electric)

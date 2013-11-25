@@ -180,6 +180,7 @@
 ;(keyboard-translate ?\C-m ?\C-&)
 ;(global-set-key (kbd "C-&") 'newline-and-indent)
 ;(global-set-key (kbd "RET") 'newline-and-indent)
+(global-set-key (kbd "RET") 'newline-and-indent)
 ;; Same with C-c which is a prefix key
 ;(keyboard-translate ?\C-c ?\C-.)
 ;(global-set-key (kbd "C-.") 'kill-word)
