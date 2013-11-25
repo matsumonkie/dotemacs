@@ -9,7 +9,7 @@
     
   (defvar my-conf-path "~/.emacs.d/conf")
   (defvar load-path (cons my-conf-path load-path))
-  (defvar files-to-load (list "appearance" "reset" "plugin" "function" "shortcut" "system" "dev" "alias"))
+  (defvar files-to-load (list "appearance" "reset" "alias" "function" "shortcut" "system" "dev" "plugin"))
     
   (defun init-conf (files)
     "Load configuration files"
