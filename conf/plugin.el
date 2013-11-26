@@ -15,7 +15,9 @@
 ;; Yasnippet
 (install-package 'yasnippet)
 (require 'yasnippet)
-(yas-load-directory "~/.emacs.d/plugins/yasnippet/snippets/yasnippets-rails/")
+(setq yas-snippet-dirs
+      '("~/.emacs.d/plugins/yasnippets-rails/rails-snippets"
+        "~/.emacs.d/elpa/yasnippet-20131031.628/snippets"))
 (yas-global-mode 1)
 
 ;; Tabbar

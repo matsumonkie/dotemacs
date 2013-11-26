@@ -1,6 +1,0 @@
-# name: def
-# key: def
-# --
-def ${method}${(${args})}
-  $0
-end
