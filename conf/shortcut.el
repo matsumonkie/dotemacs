@@ -176,7 +176,8 @@
 (global-set-key (kbd "RET") 'newline-and-indent)
 ;; Same with C-c which is a prefix key
 ;(keyboard-translate ?\C-j ?\C-.)
-(global-set-key (kbd "C-c C-c") 'execute-extended-command)
+(global-unset-key (kbd "C-@ C-@"))
+(global-set-key (kbd "C-SPC C-SPC") 'execute-extended-command)
 
 ;; Go 2 lines up or down
 (global-set-key (kbd "\C-s") 'scroll-up-lot)
