@@ -80,13 +80,6 @@
 ;; Hack to solve problem for tab and C-i
 ;(global-set-key "\t" 'self-insert-command)
 
-;(setq local-function-key-map (delq '(kp-tab . [9]) local-function-key-map))
-;(global-set-key (kbd "<tab>") (lambda () (interactive) (message "tab1")))
-;(global-set-key (kbd "C-i") (lambda () (interactive) (message "tab2"))) 
-
-;(define-key input-decode-map (kbd "C-i") (kbd "H-i"))
-;(global-set-key (kbd "H-i") (lambda () (interactive) (message "taba")))
-
 (global-set-key (kbd "C-i") 'backward-kill-word)
 (global-set-key (kbd "¿") 'tab-to-tab-stop)
 
@@ -182,8 +175,8 @@
 ;(global-set-key (kbd "RET") 'newline-and-indent)
 (global-set-key (kbd "RET") 'newline-and-indent)
 ;; Same with C-c which is a prefix key
-;(keyboard-translate ?\C-c ?\C-.)
-(global-set-key (kbd "C-.") 'kill-word)
+;(keyboard-translate ?\C-j ?\C-.)
+(global-set-key (kbd "C-c C-c") 'execute-extended-command)
 
 ;; Go 2 lines up or down
 (global-set-key (kbd "\C-s") 'scroll-up-lot)

@@ -13,8 +13,9 @@
 ;; Information sur une commande
 (defalias 'ap 'apropos)
 
-;; Mark whole buffer
+;; buffer
 (defalias 'mwb 'mark-whole-bufferi)
+(defalias 'kb 'ido-kill-buffer)
 
 ;; Magit
 (defalias 'ms 'magit-status)
