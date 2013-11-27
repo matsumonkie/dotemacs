@@ -65,3 +65,16 @@
   '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.clj" "*.py" "*.rb" "*.js" "*.pl"
     "*.sh" "*.erl" "*.hs" "*.ml" "*.erb")
 "List of patterns to look for with `find-file-in-project'.")
+
+;; Auto-complete
+;(install-package 'auto-complete)
+;(require 'auto-complete)
+
+;; Yari
+(install-package 'yari)
+(defun ri-bind-key ()
+  (local-set-key [f1] 'yari))
+
+(add-hook 'ruby-mode-hook 'ri-bind-key)
+
+
