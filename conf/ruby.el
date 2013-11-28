@@ -9,19 +9,6 @@
 ;; HAML mode
 (install-package 'haml-mode)
 
-;; Ruby electric mode
-(install-package 'ruby-electric)
-(defun my-ruby-mode-hook ()
-  (ruby-electric-mode))
-(add-hook 'ruby-mode-hook 'my-ruby-mode-hook) 
-
-;;fix ruby electric bug
-(defun ruby-insert-end ()
-  (interactive)
-  (insert "end")
-  (ruby-indent-line t)
-  (end-of-line))
-
 ;; RSense
 (install-package 'rsense)
 (require 'rsense)
