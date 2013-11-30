@@ -102,3 +102,13 @@
 ;; Multiple cursor
 (install-package 'multiple-cursors)
 (require 'multiple-cursors)
+
+;; Key chord
+(install-package 'key-chord)
+(require 'key-chord)
+(key-chord-mode 1)
+(key-chord-define-global "oo" 'other-window)
+(key-chord-define-global "qq" 'delete-window)
+(key-chord-define-global "ff" 'delete-other-windows)
+(key-chord-define-global "nn" 'next-buffer)
+(key-chord-define-global "pp" 'previous-buffer)
