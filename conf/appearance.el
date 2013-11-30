@@ -2,7 +2,7 @@
 (tool-bar-mode 0)
 (menu-bar-mode 0)
 
-;; Syntaxical colorisation enabled
+;; syntaxical colorisation enabled
 (require 'font-lock)
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
@@ -21,21 +21,26 @@
 ;; Frame name = edited file name
 (setq frame-title-format '(buffer-file-name "%f"))
 
-(add-to-list 'load-path "~/.emacs.d/themes")
-
 ;; Theme tango tango
-(require 'color-theme)
-(setq color-theme-load-all-themes nil)
-(require 'color-theme-tangotango)
-(color-theme-tangotango)
+(install-package 'tangotango-theme)
+(require 'tangotango-theme)
+;(load-theme 'tangotango t)
+
+
+(if (daemonp)
+  (add-hook 'after-make-frame-functions
+    (lambda (frame)
+      (load-theme 'tangotango t)))
+  (load-theme 'tangotango t))
+
 
 ;; Underline current line
 (global-hl-line-mode 1)
 (set-face-background 'highlight "#5a5c59")
 
 ;; Nyan cat mode when graphic mode
-(if (display-graphic-p)
-  (progn
-    (add-to-list 'load-path (concat user-emacs-directory "themes/nyancat-mode"))
-    (require 'nyan-mode)
-    (nyan-mode)))
+;(if (display-graphic-p)
+;  (progn
+;    (add-to-list 'load-path (concat user-emacs-directory "themes/nyancat-mode"))
+;    (require 'nyan-mode)
+;    (nyan-mode)))
