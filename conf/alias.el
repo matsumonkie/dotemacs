@@ -22,6 +22,7 @@
 
 ;; Narrow
 (defalias 'nr  'narrow-to-region)
+(defalias 'wd  'widen)
 
 ;; Package
 (defalias 'pl 'package-list-packages)
@@ -31,3 +32,7 @@
 (defalias 'cmn 'mc/mark-next-like-this)
 (defalias 'cmp 'mc/mark-previous-like-this)
 (defalias 'cma 'mc/mark-all-like-this)
+
+;; Magit
+(defalias 'mm 'magit-mode)
+(defalias 'gss 'magit-status)

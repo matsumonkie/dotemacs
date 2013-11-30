@@ -112,3 +112,7 @@
 (key-chord-define-global "ff" 'delete-other-windows)
 (key-chord-define-global "nn" 'next-buffer)
 (key-chord-define-global "pp" 'previous-buffer)
+
+;; Magit
+(install-package 'magit)
+(require 'magit)
