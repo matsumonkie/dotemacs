@@ -23,4 +23,5 @@
   (local-set-key (kbd "C-c m") 'rinari-find-model)
   (local-set-key (kbd "C-c v") 'rinari-find-view)
   (local-set-key (kbd "C-c f") 'rinari-find-file-in-project)
+  (local-set-key (kbd "C-j") 'ace-jump-mode)
 ))

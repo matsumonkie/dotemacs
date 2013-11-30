@@ -92,7 +92,7 @@
 ;; Ace jump mode
 (install-package 'ace-jump-mode)
 (require 'ace-jump-mode)
-(define-key global-map (kbd "C-j") 'ace-jump-mode)
+(global-set-key (kbd "C-j") 'ace-jump-mode)
 
 ;; Expand region
 (install-package 'expand-region)

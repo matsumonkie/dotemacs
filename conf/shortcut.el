@@ -146,7 +146,9 @@
 (define-key global-map (kbd "C-SPC .") 'comment-line)
 (define-key global-map (kbd "C-SPC :") 'uncomment-line)
 
-(global-set-key (kbd "C-é") 'my-copy-line)
+(keyboard-translate ?\C-y ?\C-é)
+;(global-set-key (kbd "é") "y")
+(global-set-key (kbd "C-y") 'my-copy-line)
 
 (global-set-key (kbd "C-SPC i") 'indent-region)
 
