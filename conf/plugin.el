@@ -117,8 +117,3 @@
 (install-package 'magit)
 (require 'magit)
 
-;; Spotify
-(install-package 'spotify)
-(defalias 'sp 'spotify-playpause)
-(defalias 'sn 'spotify-next)
-
