@@ -36,3 +36,8 @@
 ;; Magit
 (defalias 'mm 'magit-mode)
 (defalias 'gss 'magit-status)
+
+;; window
+(defalias 'o 'other-window)
+(defalias 'q 'delete-window)
+(defalias 'f 'delete-other-windows)

@@ -104,7 +104,7 @@
 ;;;;;;;;;;;;;;;;
 ;; RECTANGLES ;;
 ;;;;;;;;;;;;;;;;
-(global-set-key (kbd "C-SPC r c") 'delete-rectangle)    ;; supprime un rectangle en l'enregistrant
+(global-set-key (kbd "C-SPC r c") 'copy-rectangle-to-register)    ;; supprime un rectangle en l'enregistrant
 (global-set-key (kbd "C-SPC r v") 'yank-rectangle)   	;; insère le dernier rectangle enregistré
 (global-set-key (kbd "C-SPC r o") 'open-rectangle)   	;; insère un rectangle de blancs
 (global-set-key (kbd "C-SPC r d") 'kill-rectangle) 	;; supprime un rectangle sans l'enregistrer

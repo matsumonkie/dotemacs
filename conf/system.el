@@ -1,6 +1,3 @@
-;; Emacs server
-(server-start)
-
 ;; Fast boot
 (modify-frame-parameters nil '((wait-for-wm . nil)))
 (setq inhibit-startup-message t)
