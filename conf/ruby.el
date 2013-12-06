@@ -25,3 +25,14 @@
   (local-set-key (kbd "C-c f") 'rinari-find-file-in-project)
   (local-set-key (kbd "C-j") 'ace-jump-mode)
 ))
+
+;; Ruby electric
+(install-package 'ruby-electric)
+(require 'ruby-mode)
+(add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
+
+(defun ruby-insert-end ()
+  (interactive)
+  (insert "end")
+  (ruby-indent-line t)
+  (end-of-line))
