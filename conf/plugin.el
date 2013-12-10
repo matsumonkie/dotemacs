@@ -105,5 +105,3 @@
 ;; Magit
 (install-package 'magit)
 (require 'magit)
-
-(install-package 'circe)

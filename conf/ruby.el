@@ -27,12 +27,16 @@
 ))
 
 ;; Ruby electric
-(install-package 'ruby-electric)
-(require 'ruby-mode)
+;(require 'ruby-mode)
+
+;(defun ruby-insert-end ()
+;  (interactive)
+;  (insert "end")
+;  (ruby-indent-line t)
+;  (end-of-line))
+
+;; electric-ruby
+(add-to-list 'load-path "~/.emacs.d/plugins")
+(require 'ruby-electric)
 (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
 
-(defun ruby-insert-end ()
-  (interactive)
-  (insert "end")
-  (ruby-indent-line t)
-  (end-of-line))
