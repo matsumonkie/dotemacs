@@ -4,6 +4,8 @@
 (defalias 'dr 'downcase-region)
 (defalias 'dw 'downcase-word)
 
+(defalias 'ir 'downcase-word)
+
 (defalias 'eb 'eval-buffer)
 
 (defalias 'ar 'align-regexp)
@@ -16,9 +18,6 @@
 ;; buffer
 (defalias 'mwb 'mark-whole-bufferi)
 (defalias 'kb 'ido-kill-buffer)
-
-;; Magit
-(defalias 'ms 'magit-status)
 
 ;; Narrow
 (defalias 'nr  'narrow-to-region)
@@ -41,3 +40,4 @@
 (defalias 'o 'other-window)
 (defalias 'q 'delete-window)
 (defalias 'f 'delete-other-windows)
+

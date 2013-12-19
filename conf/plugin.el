@@ -12,13 +12,6 @@
 (require 'linum+)
 (global-linum-mode 1) 
 
-;; Yasnippet
-(install-package 'yasnippet)
-(require 'yasnippet)
-(setq yas-snippet-dirs
-      '("~/.emacs.d/plugins/yasnippets-rails/rails-snippets"
-        "~/.emacs.d/elpa/yasnippet-20131031.628/snippets"))
-(yas-global-mode 1)
 
 ;; Tabbar
 (if (display-graphic-p)
