@@ -89,7 +89,7 @@
 ;; Expand region
 (install-package 'expand-region)
 (require 'expand-region)
-(global-set-key (kbd "C-a") 'er/expand-region)
+;(global-set-key (kbd "C-a") 'er/expand-region)
 
 ;; Multiple cursor
 (install-package 'multiple-cursors)

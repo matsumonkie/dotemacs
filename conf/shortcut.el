@@ -81,7 +81,7 @@
 ;(global-set-key "\t" 'self-insert-command)
 
 (global-set-key (kbd "C-i") 'backward-kill-word)
-(global-set-key (kbd "¿") 'tab-to-tab-stop)
+(global-set-key (kbd "C-o") 'repeat)
 
 ;(keyboard-translate ?\C-i ?\M-|)
 ;(global-set-key [?\M-|] 'backward-kill-word)
