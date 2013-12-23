@@ -3,9 +3,9 @@
 (defalias 'uw 'upcase-word)
 (defalias 'dr 'downcase-region)
 (defalias 'dw 'downcase-word)
-
 (defalias 'ir 'downcase-word)
 
+(defalias 'dtw' 'delete-trailing-whitespace)
 (defalias 'eb 'eval-buffer)
 
 (defalias 'ar 'align-regexp)
@@ -40,4 +40,3 @@
 (defalias 'o 'other-window)
 (defalias 'q 'delete-window)
 (defalias 'f 'delete-other-windows)
-
