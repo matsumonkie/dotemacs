@@ -5,7 +5,7 @@
 (defalias 'dw 'downcase-word)
 (defalias 'ir 'downcase-word)
 
-(defalias 'dtw' 'delete-trailing-whitespace)
+(defalias 'dtw 'delete-trailing-whitespace)
 (defalias 'eb 'eval-buffer)
 
 (defalias 'ar 'align-regexp)

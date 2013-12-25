@@ -3,38 +3,34 @@
              '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-(defun install-package (name)  
+(defun install-package (name)
   (unless (package-installed-p name)
     (package-refresh-contents) (package-install name)))
 
 ;; Linum+ visible in all modes
 (add-to-list 'load-path "~/.emacs.d/plugins")
 (require 'linum+)
-(global-linum-mode 1) 
+(global-linum-mode 1)
 
 
 ;; Tabbar
-(if (display-graphic-p)
-    (progn
-      (require 'tabbar)
-      (tabbar-mode)
-      (setq
-       tabbar-scroll-left-help-function nil   ; don't show help information
-       tabbar-scroll-right-help-function nil
-       tabbar-help-on-tab-function nil
-       tabbar-home-help-function nil
-       tabbar-buffer-home-button (quote (("") "")) ; don't show tabbar button
-       tabbar-scroll-left-button (quote (("") ""))
-       tabbar-scroll-right-button (quote (("") "")))
-      
-      (set-face-attribute 'tabbar-default nil :weight 'normal
-                          :width 'normal
-                          :background "gray60")
-      (set-face-attribute 'tabbar-unselected	nil :background "gray70" :foreground "black" :box nil)
-      (set-face-attribute 'tabbar-selected	nil :background "white" :foreground "black" :box nil)
-      (set-face-attribute 'tabbar-button	nil :box '(:line-width 1 :color "gray72" :style released-button))
-      (set-face-attribute 'tabbar-separator	nil :height 0.7)
-      ))
+(require 'tabbar)
+(tabbar-mode)
+(setq
+ tabbar-scroll-left-help-function  nil   ; do not show help information
+ tabbar-scroll-right-help-function nil
+ tabbar-help-on-tab-function       nil
+ tabbar-home-help-function         nil
+ tabbar-buffer-home-button  (quote (("") "")) ; do not show tabbar button
+ tabbar-scroll-left-button  (quote (("") ""))
+ tabbar-scroll-right-button (quote (("") "")))
+
+(set-face-attribute 'tabbar-default nil :weight 'normal :width 'normal :background "gray60")
+(set-face-attribute 'tabbar-unselected	nil :background "gray70" :foreground "black" :box nil)
+(set-face-attribute 'tabbar-selected	nil :background "white" :foreground "black" :box nil)
+(set-face-attribute 'tabbar-button	nil :box '(:line-width 1 :color "gray72" :style released-button))
+(set-face-attribute 'tabbar-separator	nil :height 0.7)
+
 
 ;; Redo +
 (install-package 'redo+)
