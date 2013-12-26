@@ -40,3 +40,5 @@
 (require 'ruby-electric)
 (add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
 
+;; do not add header => -*- coding: utf-8 -*-
+(setq ruby-insert-encoding-magic-comment nil)
