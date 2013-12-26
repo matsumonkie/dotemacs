@@ -3,6 +3,9 @@
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Always follow symlink
+(setq vc-follow-symlinks t)
+
 ;; Opening file side by side rather than onTop/below
 (setq split-height-threshold nil) 
 (setq split-width-threshold 0) 
