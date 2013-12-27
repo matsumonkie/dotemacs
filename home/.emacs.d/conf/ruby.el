@@ -3,7 +3,9 @@
 (require 'ruby-mode)
 
 (defun set-newline-and-indent ()
-  (local-set-key (kbd "RET") 'newline-and-indent))
+  (local-set-key (kbd "RET") 'newline-and-indent)
+  (local-unset-key (kbd "C-j"))
+)
 (add-hook 'ruby-mode-hook 'set-newline-and-indent)
 
 ;; HAML mode
@@ -12,6 +14,12 @@
 ;; RSense
 (install-package 'rsense)
 (require 'rsense)
+
+;; Electric-ruby
+(add-to-list 'load-path "~/.emacs.d/plugins")
+(require 'ruby-electric)
+(add-hook 'ruby-mode-hook
+          (lambda () (ruby-electric-mode t)))
 
 ;; Rinari
 (install-package 'rinari)
@@ -23,22 +31,8 @@
   (local-set-key (kbd "C-c m") 'rinari-find-model)
   (local-set-key (kbd "C-c v") 'rinari-find-view)
   (local-set-key (kbd "C-c f") 'rinari-find-file-in-project)
-  (local-set-key (kbd "C-j") 'ace-jump-mode)
+  (local-set-key (kbd "C-j")   'ace-jump-mode)
 ))
-
-;; Ruby electric
-;(require 'ruby-mode)
-
-;(defun ruby-insert-end ()
-;  (interactive)
-;  (insert "end")
-;  (ruby-indent-line t)
-;  (end-of-line))
-
-;; electric-ruby
-(add-to-list 'load-path "~/.emacs.d/plugins")
-(require 'ruby-electric)
-(add-hook 'ruby-mode-hook (lambda () (ruby-electric-mode t)))
 
 ;; do not add header => -*- coding: utf-8 -*-
 (setq ruby-insert-encoding-magic-comment nil)
