@@ -12,7 +12,6 @@
 (require 'linum+)
 (global-linum-mode 1)
 
-
 ;; Tabbar
 (require 'tabbar)
 (tabbar-mode)
@@ -30,7 +29,6 @@
 (set-face-attribute 'tabbar-selected	nil :background "white" :foreground "black" :box nil)
 (set-face-attribute 'tabbar-button	nil :box '(:line-width 1 :color "gray72" :style released-button))
 (set-face-attribute 'tabbar-separator	nil :height 0.7)
-
 
 ;; Redo +
 (install-package 'redo+)
@@ -85,7 +83,7 @@
 ;; Expand region
 (install-package 'expand-region)
 (require 'expand-region)
-;(global-set-key (kbd "C-a") 'er/expand-region)
+(global-set-key (kbd "M-o") 'er/expand-region)
 
 ;; Multiple cursor
 (install-package 'multiple-cursors)

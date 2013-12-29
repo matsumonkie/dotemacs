@@ -32,6 +32,6 @@
 
 ;; Underline current line
 (global-hl-line-mode 1)
-(set-face-background 'hl-line "#222")
+(set-face-background 'hl-line "#111")
 (set-face-foreground 'highlight nil)
 
