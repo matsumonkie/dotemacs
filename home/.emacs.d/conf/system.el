@@ -7,7 +7,7 @@
 (setq vc-follow-symlinks t)
 
 ;; Opening file side by side rather than onTop/below
-(setq split-height-threshold nil) 
+(setq split-height-threshold 0) 
 (setq split-width-threshold 0) 
 
 ;; BACKUP
