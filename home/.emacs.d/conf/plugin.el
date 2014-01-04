@@ -92,3 +92,8 @@
 ;; Magit
 (install-package 'magit)
 (require 'magit)
+
+;; Org mode
+(install-package 'org)
+(require 'org-install)
+(load "~/.emacs.d/conf/org.el")
