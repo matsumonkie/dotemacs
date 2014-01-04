@@ -195,8 +195,8 @@
 (global-set-key (kbd "M-<down>") 'move-line-region-down)
 (global-set-key (kbd "M-<up>") 'move-line-region-up)
 
-(global-set-key "\M-s" 'tabbar-backward-tab)
-(global-set-key "\M-r" 'tabbar-forward-tab)
+(global-set-key "\M-t" 'tabbar-backward-tab)
+(global-set-key "\M-n" 'tabbar-forward-tab)
 
 ;;;;;;;;;;;;;;;
 ;; Recherche ;;
