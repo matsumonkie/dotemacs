@@ -70,10 +70,10 @@
 (add-hook 'ruby-mode-hook 'ri-bind-key)
 
 ;; Rainbow mode
-(install-package 'rainbow-mode)
-(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
-  (lambda () (rainbow-mode 1)))
-(my-global-rainbow-mode 1)
+;(install-package 'rainbow-mode)
+;(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
+;  (lambda () (rainbow-mode 1)))
+;(my-global-rainbow-mode 1)
 
 ;; Ace jump mode
 (install-package 'ace-jump-mode)
