@@ -12,32 +12,6 @@
 (require 'linum+)
 (global-linum-mode 1)
 
-;; Tabbar
-(require 'tabbar)
-(tabbar-mode)
-(setq
- tabbar-scroll-left-help-function  nil   ; do not show help information
- tabbar-scroll-right-help-function nil
- tabbar-help-on-tab-function       nil
- tabbar-home-help-function         nil
- tabbar-buffer-home-button  (quote (("") "")) ; do not show tabbar button
- tabbar-scroll-left-button  (quote (("") ""))
- tabbar-scroll-right-button (quote (("") "")))
-
-(set-face-attribute 'tabbar-default nil :weight 'normal :width 'normal :background "blue" :underline nil)
-(set-face-attribute 'tabbar-unselected	nil :background "blue"   :foreground "white" :box nil)
-(set-face-attribute 'tabbar-selected	nil :background "yellow" :foreground "black" :box nil)
-(setq tabbar-separator '(1))
-
-;; Add a buffer modification state indicator in the tab label, and place a
-;; space around the label to make it looks less crowd.
-(defadvice tabbar-buffer-tab-label (after fixup_tab_label_space_and_flag activate)
-  (setq ad-return-value
-    (if (and (buffer-modified-p (tabbar-tab-value tab))
-             (buffer-file-name (tabbar-tab-value tab)))
-        (concat "*" (concat ad-return-value ""))
-        (concat "" (concat ad-return-value "")))))
-
 ;; Redo +
 (install-package 'redo+)
 (require 'redo+)
