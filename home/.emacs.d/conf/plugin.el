@@ -30,8 +30,8 @@
 (require 'find-file-in-project)
 (global-set-key (kbd "C-SPC a") 'find-file-in-project)
 (defvar ffip-patterns
-  '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.clj" "*.py" "*.rb" "*.js" "*.pl"
-    "*.sh" "*.erl" "*.hs" "*.ml" "*.erb")
+  '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.rb" "*.js"
+    "*.sh" "*.erb" "*.slim" "*.yml" "*.sass" "*.scss")
 "List of patterns to look for with `find-file-in-project'.")
 
 ;; Auto-complete
