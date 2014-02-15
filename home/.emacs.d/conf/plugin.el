@@ -25,15 +25,20 @@
 (require 'ido)
 (ido-mode t)
 
-;; Find all files in project
-(install-package 'find-file-in-project)
-(require 'find-file-in-project)
-(global-set-key (kbd "C-SPC a") 'find-file-in-project)
-(defvar ffip-patterns
-  '("*.html" "*.org" "*.txt" "*.md" "*.el" "*.rb" "*.js"
-    "*.sh" "*.erb" "*.slim" "*.yml" "*.sass" "*.scss")
-"List of patterns to look for with `find-file-in-project'.")
+;; flx-ido
+(install-package 'flx-ido)
+(require 'flx-ido)
+(ido-mode 1)
+(ido-everywhere 1)
+(flx-ido-mode 1)
+;; disable ido faces to see flx highlights.
+(setq ido-use-faces nil)
 
+;; projectile
+(install-package 'projectile)
+(projectile-global-mode)
+(global-set-key (kbd "C-SPC a") 'projectile-find-file)
+  
 ;; Auto-complete
 (install-package 'auto-complete)
 (require 'auto-complete)
