@@ -21,6 +21,9 @@
 (require 'nav)
 (global-set-key [f8] 'nav-toggle)
 
+;; Tabbar
+(install-package 'tabbar)
+
 ;; ido
 (require 'ido)
 (ido-mode t)
