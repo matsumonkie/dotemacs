@@ -4,8 +4,8 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; Tabbar
-(require 'tabbar)
-(tabbar-mode)
+;(require 'tabbar)
+;(tabbar-mode)
 
 (setq
  tabbar-scroll-left-help-function  nil   ; do not show help information
