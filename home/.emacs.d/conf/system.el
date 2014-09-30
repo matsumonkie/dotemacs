@@ -3,12 +3,15 @@
 (setq inhibit-startup-message t)
 (fset 'yes-or-no-p 'y-or-n-p)
 
+;; Delete trailing whitespace on save
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
 ;; Always follow symlink
 (setq vc-follow-symlinks t)
 
 ;; Opening file side by side rather than onTop/below
-(setq split-height-threshold nil) 
-(setq split-width-threshold 0) 
+(setq split-height-threshold nil)
+(setq split-width-threshold 0)
 
 ;; BACKUP
 (defvar my-backup-directory (concat user-emacs-directory "backups"))
@@ -23,7 +26,7 @@
       kept-new-versions 6
       kept-old-versions 2
       version-control t            ; version numbers for backup file
-      delete-old-versions t 
+      delete-old-versions t
       delete-by-moving-to-trash t
       auto-save-default nil        ; no #file# backups
       )
@@ -35,7 +38,7 @@
 (set-language-environment   'utf-8)
 (prefer-coding-system       'utf-8)
 
-;; No carriage return for long line 
+;; No carriage return for long line
 (if (boundp 'truncate-lines)
     (setq-default truncate-lines t) ; always truncate
   (progn
@@ -43,7 +46,7 @@
     (setq auto-hscroll-mode 1)
     (setq automatic-hscrolling t)))
 
-;; le contenu se déplace d'une seule ligne en fin de fenetre 
+;; le contenu se déplace d'une seule ligne en fin de fenetre
 ;(setq scroll-step 1)
 
 ;; No visual alert
@@ -60,7 +63,7 @@
 ;; Find case sensitive
 (setq case-fold-search nil)
 
-;; Selection can be overwrite 
+;; Selection can be overwrite
 (delete-selection-mode 1)
 
 ;; Mouse support
