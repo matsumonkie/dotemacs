@@ -1,3 +1,6 @@
+;; Replace
+(defalias 'replace 'query-replace)
+
 ;; Upcase / downcase
 (defalias 'ur 'upcase-region)
 (defalias 'uw 'upcase-word)
