@@ -29,7 +29,7 @@
 ;; KILL
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key [f4] 'kill-emacs)
-(global-set-key (kbd "C-S-q") 'my-kill-buffer)
+(global-set-key (kbd "C-k") 'my-kill-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; BUFFER MENU
