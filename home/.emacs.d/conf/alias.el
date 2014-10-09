@@ -21,6 +21,7 @@
 ;; buffer
 (defalias 'mwb 'mark-whole-bufferi)
 (defalias 'kb 'ido-kill-buffer)
+(defalias 'reload 'revert-buffer)
 
 ;; Narrow
 (defalias 'nr  'narrow-to-region)
