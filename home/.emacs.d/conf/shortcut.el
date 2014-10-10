@@ -126,8 +126,8 @@
 (global-set-key "\C-t" 'backward-word)
 
 ;; PARAGRAPH
-(global-set-key "\C-d" 'backward-paragraph)
-(global-set-key "\C-l" 'forward-paragraph)
+(global-set-key "\C-d" 'my-backward-block)
+(global-set-key "\C-l" 'my-forward-block)
 
 ;; BUFFER
 (global-set-key "\M-d" 'beginning-of-buffer)

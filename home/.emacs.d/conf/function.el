@@ -13,7 +13,7 @@
 
 (defun my-kill-line ()
   "Kill whole line if point is at the beginning of the line else only kill line"
-  (interactive) 
+  (interactive)
   (if (equal (point) (line-beginning-position))
       (kill-whole-line)
     (kill-line)))
@@ -25,8 +25,8 @@
   (interactive)
   (scroll-up (window-half-height)))
 
-(defun scroll-down-half ()         
-  (interactive)                    
+(defun scroll-down-half ()
+  (interactive)
   (scroll-down (window-half-height)))
 
 (defun insert-comment ()
@@ -111,7 +111,7 @@
 (defun move-line-region-up (start end n)
   (interactive "r\np")
   (if (use-region-p)
-      (move-region-up start end n) 
+      (move-region-up start end n)
     (move-line-up n)
     ))
 
@@ -239,7 +239,7 @@
   (interactive)
   (end-of-line)
   (if (not (eobp))
-      (forward-char 1)))  
+      (forward-char 1)))
 
 (defun my-format-buffer ()
   "indent whole buffer and delete trailing whitespace"
@@ -266,3 +266,22 @@
   "Indent the current buffer"
   (interactive)
   (save-excursion (indent-region (point-min) (point-max) nil)))
+
+(defun my-forward-block (&optional φn)
+  "Move cursor forward to the beginning of next text block.
+  A text block is separated by blank lines."
+  (interactive "p")
+    (let ((φn (if (null φn) 1 φn)))
+      (search-forward-regexp "\n[\t\n ]*\n+" nil "NOERROR" φn)))
+
+(defun my-backward-block (&optional φn)
+  "Move cursor backward to previous text block."
+  (interactive "p")
+  (let ((φn (if (null φn) 1 φn))
+    (ξi 1))
+    (while (<= ξi φn)
+      (if (search-backward-regexp "\n[\t\n ]*\n+" nil "NOERROR")
+        (progn (skip-chars-backward "\n\t "))
+        (progn (goto-char (point-min))
+        (setq ξi φn)))
+        (setq ξi (1+ ξi)))))
