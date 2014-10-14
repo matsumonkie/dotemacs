@@ -6,17 +6,17 @@
 (require 'font-lock)
 (global-font-lock-mode t)
 (setq font-lock-maximum-decoration t)
- 
+
 ;; 24h hour format
 (display-time)
-(setq display-time-24hr-format t) 
+(setq display-time-24hr-format t)
 
 ;; Line and column number enabled
 (column-number-mode t)
 (line-number-mode t)
 
 ;; No blinking cursor
-(blink-cursor-mode -1)
+(blink-cursor-mode nil)
 
 ;; Frame name = edited file name
 (setq frame-title-format '(buffer-file-name "%f"))

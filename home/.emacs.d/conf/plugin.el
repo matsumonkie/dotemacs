@@ -41,7 +41,7 @@
 (install-package 'projectile)
 (projectile-global-mode)
 (global-set-key (kbd "C-SPC a") 'projectile-find-file)
-  
+
 ;; Auto-complete
 (install-package 'auto-complete)
 (require 'auto-complete)
@@ -58,12 +58,6 @@
 (defun ri-bind-key ()
   (local-set-key [f1] 'yari))
 (add-hook 'ruby-mode-hook 'ri-bind-key)
-
-;; Rainbow mode
-;(install-package 'rainbow-mode)
-;(define-globalized-minor-mode my-global-rainbow-mode rainbow-mode
-;  (lambda () (rainbow-mode 1)))
-;(my-global-rainbow-mode 1)
 
 ;; Ace jump mode
 (install-package 'ace-jump-mode)

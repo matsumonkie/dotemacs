@@ -1,5 +1,5 @@
 ;; Replace
-(defalias 'replace 'query-replace)
+(defalias 'r 'query-replace)
 
 ;; Upcase / downcase
 (defalias 'ur 'upcase-region)
