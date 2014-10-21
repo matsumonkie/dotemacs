@@ -39,8 +39,13 @@
 ;; Magit
 (defalias 'mm 'magit-mode)
 (defalias 'gss 'magit-status)
+(defalias 'gbm 'magit-blame-mode)
 
 ;; window
 (defalias 'o 'other-window)
 (defalias 'q 'delete-window)
 (defalias 'f 'delete-other-windows)
+
+;; copy/paste
+(defalias 'cc 'copy-to-clipboard)
+(defalias 'pc 'paste-from-clipboard)
