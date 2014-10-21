@@ -1,6 +1,9 @@
 ;; Replace
 (defalias 'r 'query-replace)
 
+;; Rectangle
+(defalias 'rm 'rectangle-mark-mode)
+
 ;; Upcase / downcase
 (defalias 'ur 'upcase-region)
 (defalias 'uw 'upcase-word)
