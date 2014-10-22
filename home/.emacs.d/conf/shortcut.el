@@ -63,12 +63,6 @@
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; MARK AND POINT
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(global-set-key (kbd "M-e") 'exchange-point-and-mark)
-(global-set-key "\M-e" 'open-line)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; UNDO/REDO
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-z") 'undo)
@@ -105,6 +99,7 @@
 ;;;;;;;;;;;;;;;;
 ;; RECTANGLES ;;
 ;;;;;;;;;;;;;;;;
+(global-set-key (kbd "M-e") 'rectangle-mark-mode)
 (global-set-key (kbd "C-SPC r c") 'copy-rectangle-to-register)    ;; supprime un rectangle en l'enregistrant
 (global-set-key (kbd "C-SPC r v") 'yank-rectangle)   	;; insère le dernier rectangle enregistré
 (global-set-key (kbd "C-SPC r o") 'open-rectangle)   	;; insère un rectangle de blancs
