@@ -1,6 +1,11 @@
 ;; Replace
 (defalias 'r 'query-replace)
 
+;; Macro
+(defalias 'sm 'start-kbd-macro)
+(defalias 'em 'end-kbd-macro)
+(defalias 'lm 'call-last-kbd-macro)
+
 ;; Rectangle
 (defalias 'rm 'rectangle-mark-mode)
 
