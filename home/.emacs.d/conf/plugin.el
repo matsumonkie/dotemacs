@@ -42,17 +42,6 @@
 (projectile-global-mode)
 (global-set-key (kbd "C-SPC a") 'projectile-find-file)
 
-;; Auto-complete
-(install-package 'auto-complete)
-(require 'auto-complete)
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories
-                  "~/.emacs.d/plugins/auto-complete/dict")
-(ac-config-default)
-(setq ac-ignore-case nil)
-(add-to-list 'ac-modes 'enh-ruby-mode)
-(add-to-list 'ac-modes 'web-mode)
-
 ;; Yari
 (install-package 'yari)
 (defun ri-bind-key ()
