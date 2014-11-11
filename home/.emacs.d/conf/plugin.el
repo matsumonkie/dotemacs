@@ -70,3 +70,8 @@
 (install-package 'org)
 (require 'org-install)
 (load "~/.emacs.d/conf/org.el")
+
+;; Web mode (.erb)
+(install-package 'web-mode)
+(require 'web-mode)
+(add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
