@@ -2,6 +2,11 @@
 ;; FUNCTIONS ;;
 ;;;;;;;;;;;;;;;
 
+(defun indent-buffer ()
+  (interactive)
+  (save-excursion
+    (indent-region (point-min) (point-max) nil)))
+
 (defun my-kill-buffer ()
   "kill current buffer without asking if it's the good one"
   (interactive)
