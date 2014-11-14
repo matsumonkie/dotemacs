@@ -1,6 +1,9 @@
 ;; Replace
 (defalias 'r 'query-replace)
 
+;; Line mode
+(defalias 'glm 'global-hl-line-mode)
+
 ;; Macro
 (defalias 'sm 'start-kbd-macro)
 (defalias 'em 'end-kbd-macro)
