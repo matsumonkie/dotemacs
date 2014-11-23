@@ -52,6 +52,7 @@
 (install-package 'ace-jump-mode)
 (require 'ace-jump-mode)
 (global-set-key (kbd "C-j") 'ace-jump-mode)
+(global-set-key (kbd "M-j") 'ace-jump-char-mode)
 
 ;; Expand region
 (install-package 'expand-region)
