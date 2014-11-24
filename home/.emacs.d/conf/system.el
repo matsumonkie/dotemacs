@@ -61,7 +61,7 @@
 (require 'saveplace)
 
 ;; Find case sensitive
-(setq case-fold-search nil)
+(setq case-fold-search t)
 
 ;; Selection can be overwrite
 (delete-selection-mode 1)
