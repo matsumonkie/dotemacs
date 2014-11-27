@@ -253,8 +253,8 @@
   (indent-region (point-min) (point-max) nil))
 
 (defun insert-brackets () "insert brackets and go between them" (interactive)
-  (insert "[]")
-  (backward-char 1))
+       (insert "[]")
+       (backward-char 1))
 
 (defun insert-parentheses ()
   "insert parentheses and go between them"
@@ -276,20 +276,20 @@
   "Move cursor forward to the beginning of next text block.
   A text block is separated by blank lines."
   (interactive "p")
-    (let ((φn (if (null φn) 1 φn)))
-      (search-forward-regexp "\n[\t\n ]*\n+" nil "NOERROR" φn)))
+  (let ((φn (if (null φn) 1 φn)))
+    (search-forward-regexp "\n[\t\n ]*\n+" nil "NOERROR" φn)))
 
 (defun my-backward-block (&optional φn)
   "Move cursor backward to previous text block."
   (interactive "p")
   (let ((φn (if (null φn) 1 φn))
-    (ξi 1))
+        (ξi 1))
     (while (<= ξi φn)
       (if (search-backward-regexp "\n[\t\n ]*\n+" nil "NOERROR")
-        (progn (skip-chars-backward "\n\t "))
+          (progn (skip-chars-backward "\n\t "))
         (progn (goto-char (point-min))
-        (setq ξi φn)))
-        (setq ξi (1+ ξi)))))
+               (setq ξi φn)))
+      (setq ξi (1+ ξi)))))
 
 
 ;; install xsel
@@ -321,3 +321,18 @@
 
 (global-set-key [f8] 'copy-to-clipboard)
 (global-set-key [f9] 'paste-from-clipboard)
+
+
+(defun forward-subword ()
+  (interactive)
+  (subword-mode)
+  (backward-word)
+  (subword-mode)
+  )
+
+(defun backward-subword ()
+  (interactive)
+  (subword-mode)
+  (backward-word)
+  (subword-mode)
+  )

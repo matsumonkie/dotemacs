@@ -22,5 +22,3 @@
 (global-unset-key key))
 
 (global-unset-key "\C-e\C-n")
-
-
