@@ -321,18 +321,3 @@
 
 (global-set-key [f8] 'copy-to-clipboard)
 (global-set-key [f9] 'paste-from-clipboard)
-
-
-(defun forward-subword ()
-  (interactive)
-  (subword-mode)
-  (backward-word)
-  (subword-mode)
-  )
-
-(defun backward-subword ()
-  (interactive)
-  (subword-mode)
-  (backward-word)
-  (subword-mode)
-  )
