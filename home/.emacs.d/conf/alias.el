@@ -43,7 +43,7 @@
 (defalias 'pl 'package-list-packages)
 
 ;; Multiple cursor
-(defalias 'cel 'mc/edit-lines)
+(defalias 'cml 'mc/edit-lines)
 (defalias 'cmn 'mc/mark-next-like-this)
 (defalias 'cmp 'mc/mark-previous-like-this)
 (defalias 'cma 'mc/mark-all-like-this)

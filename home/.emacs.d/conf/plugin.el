@@ -83,3 +83,9 @@
                    ("open" "close")))
        ))
 (setq web-mode-enable-auto-pairing t)
+
+;; git gutter
+(install-package 'git-gutter)
+(global-git-gutter-mode t)
+(git-gutter:linum-setup)
+(add-hook 'ruby-mode-hook 'git-gutter-mode)
