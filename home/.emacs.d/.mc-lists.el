@@ -6,6 +6,7 @@
         ace-jump-mode
         clipboard-kill-ring-save
         dabbrev-expand
+        ruby-electric-close-matching-char
         ruby-electric-space
         ))
 

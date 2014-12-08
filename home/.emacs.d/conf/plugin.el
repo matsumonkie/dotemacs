@@ -89,3 +89,9 @@
 (global-git-gutter-mode t)
 (git-gutter:linum-setup)
 (add-hook 'ruby-mode-hook 'git-gutter-mode)
+
+;; Smex
+(install-package 'smex)
+(require 'smex) ; Not needed if you use package.el
+(smex-initialize)
+(global-set-key (kbd "C-SPC SPC") 'smex)

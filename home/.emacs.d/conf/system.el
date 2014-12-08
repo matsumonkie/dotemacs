@@ -38,6 +38,14 @@
 (set-language-environment   'utf-8)
 (prefer-coding-system       'utf-8)
 
+
+;; Scroll behaviour
+(setq redisplay-dont-pause t
+      scroll-margin 1
+      scroll-step 1
+      scroll-conservatively 10000
+      scroll-preserve-screen-position 1)
+
 ;; No carriage return for long line
 (if (boundp 'truncate-lines)
     (setq-default truncate-lines t) ; always truncate
