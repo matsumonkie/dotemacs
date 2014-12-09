@@ -95,3 +95,7 @@
 (require 'smex) ; Not needed if you use package.el
 (smex-initialize)
 (global-set-key (kbd "C-SPC SPC") 'smex)
+
+;; coffee mode
+(install-package 'coffee-mode)
+(custom-set-variables '(coffee-tab-width 2))
