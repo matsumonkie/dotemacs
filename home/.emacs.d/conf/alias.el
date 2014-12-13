@@ -61,3 +61,6 @@
 ;; copy/paste
 (defalias 'cc 'copy-to-clipboard)
 (defalias 'pc 'paste-from-clipboard)
+
+;; visual line mode
+(defalias 'vlm 'visual-line-mode)
