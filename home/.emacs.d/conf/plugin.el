@@ -99,3 +99,7 @@
 ;; coffee mode
 (install-package 'coffee-mode)
 (custom-set-variables '(coffee-tab-width 2))
+
+;; slim-mode
+(install-package 'slim-mode)
+(require 'slim-mode)
