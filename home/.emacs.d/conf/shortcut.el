@@ -229,3 +229,5 @@
 ;; Compile ;;
 ;;;;;;;;;;;;;
 (global-set-key (kbd "C-p")  'recenter-top-bottom)
+
+(global-set-key (kbd "C-SPC m")  'rename-this-buffer-and-file)

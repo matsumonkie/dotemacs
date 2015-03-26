@@ -5,13 +5,18 @@
       '(
         ace-jump-mode
         clipboard-kill-ring-save
+        coffee-dedent-line-backspace
+        coffee-newline-and-indent
         dabbrev-expand
         ruby-electric-close-matching-char
         ruby-electric-space
+        slim-electric-backspace
         ))
 
 (setq mc/cmds-to-run-once
       '(
         kill-rectangle
         repeat
+        tabbar-backward-tab
+        tabbar-forward-tab
         ))
