@@ -212,11 +212,6 @@
 ;; ne detruit pas le serveur si le fichier dans lequel on se trouve est un client
 (global-set-key (kbd "C-SPC q") 'intelligent-close)
 
-;;;;;;;;;;;;;
-;; iBuffer ;;
-;;;;;;;;;;;;;
-(global-set-key (kbd "C-SPC C-b") 'ibuffer)
-
 ;;;;;;;;;;;;;;;;;;;
 ;; FRAME SCALING ;;
 ;;;;;;;;;;;;;;;;;;;
