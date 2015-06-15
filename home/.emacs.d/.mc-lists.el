@@ -4,17 +4,21 @@
 (setq mc/cmds-to-run-for-all
       '(
         ace-jump-mode
+        beginning-of-visual-line
         clipboard-kill-ring-save
         coffee-dedent-line-backspace
         coffee-newline-and-indent
         dabbrev-expand
+        my-forward-block
         ruby-electric-close-matching-char
         ruby-electric-space
         slim-electric-backspace
+        string-rectangle
         ))
 
 (setq mc/cmds-to-run-once
       '(
+        end-of-visual-line
         kill-rectangle
         repeat
         tabbar-backward-tab
