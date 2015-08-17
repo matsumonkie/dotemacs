@@ -105,6 +105,8 @@
       ("\\.m$"    . objc-mode)
       ("\\.java$" . java-mode)
       ("\\.tex$"  . latex-mode)
+      ("\\.markdown$" . markdown-mode)
+      ("\\.md$" . markdown-mode)
    ) auto-mode-alist))
 
 ;; Use same buffer for compilation

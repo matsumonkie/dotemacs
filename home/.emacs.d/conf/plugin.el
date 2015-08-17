@@ -67,6 +67,8 @@
 ;; Magit
 (install-package 'magit)
 (require 'magit)
+;; prevent instructions from being shown at startup
+(setq magit-last-seen-setup-instructions "1.4.0")
 
 ;; Org mode
 (install-package 'org)
@@ -103,3 +105,19 @@
 ;; slim-mode
 (install-package 'slim-mode)
 (require 'slim-mode)
+
+;; github markdown
+(install-package 'markdown-mode)
+(require 'markdown-mode)
+(autoload 'markdown-mode "markdown-mode"
+   "Major mode for editing Markdown files" t)
+(custom-set-variables
+ '(markdown-command "rdiscount"))
+
+;; Haskell mode
+(install-package 'haskell-mode)
+(require 'haskell-mode)
+(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+
+;; ERC
+(setq erc-hide-list '("JOIN" "PART" "QUIT"))

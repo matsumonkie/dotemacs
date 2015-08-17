@@ -9,9 +9,12 @@
         coffee-dedent-line-backspace
         coffee-newline-and-indent
         dabbrev-expand
+        haskell-indentation-newline-and-indent
         my-forward-block
         ruby-electric-close-matching-char
         ruby-electric-space
+        scroll-down-lot
+        scroll-up-lot
         slim-electric-backspace
         string-rectangle
         ))

@@ -50,7 +50,7 @@
 
 ;; Magit
 (defalias 'mm 'magit-mode)
-(defalias 'gss 'magit-status)
+(defalias 'gs 'magit-status)
 (defalias 'gbm 'magit-blame-mode)
 
 ;; window
