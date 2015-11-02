@@ -117,7 +117,17 @@
 ;; Haskell mode
 (install-package 'haskell-mode)
 (require 'haskell-mode)
-(add-hook 'haskell-mode-hook 'haskell-indentation-mode)
+; (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
 
 ;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
+
+(require 'erc-match)
+(setq erc-keywords '("iori" "itsu"))
+(setq erc-autojoin-channels-alists
+  '(("freenode.net" "#emacs" "#haskell")))
+(add-to-list 'erc-nick "itsu")
+
+;; Jade
+(install-package 'jade-mode)
+(require 'jade-mode)
