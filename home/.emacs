@@ -6,12 +6,12 @@
   ;; auto compile elisp configuration files after save
   (add-hook 'emacs-lisp-mode-hook
 	    (lambda () (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
-    
+
   (defvar my-conf-path "~/.emacs.d/conf")
   (defvar load-path (cons my-conf-path load-path))
   (defvar files-to-load (list "reset" "alias" "function" "shortcut" "system" "plugin" "dev" "appearance"))
-    
-  (defun init-conf (files)
+
+  (defun load-files (files)
     "Load configuration files"
     (mapcar (lambda (file)
 	(progn
@@ -19,7 +19,6 @@
 	  (if (file-exists-p filename) (load filename))))
 	    files))
 
-  (init-conf files-to-load)
-  
-  (message "\n -- personnal configuration setup ! --\n"))
+  (load-files files-to-load)
 
+  (message "\n -- personnal configuration setup ! --\n"))

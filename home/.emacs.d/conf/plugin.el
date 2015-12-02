@@ -114,11 +114,6 @@
 (custom-set-variables
  '(markdown-command "rdiscount"))
 
-;; Haskell mode
-(install-package 'haskell-mode)
-(require 'haskell-mode)
-; (add-hook 'haskell-mode-hook 'haskell-indentation-mode)
-
 ;; ERC
 (setq erc-hide-list '("JOIN" "PART" "QUIT"))
 

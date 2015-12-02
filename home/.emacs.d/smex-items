@@ -1,16 +1,17 @@
 
 ;; ----- smex-history -----
 (
+ pc
  ib
  f
  o
  q
  r
  ap
- ar
 )
 
 ;; ----- smex-data -----
 (
  (ib . 1)
+ (pc . 1)
 )

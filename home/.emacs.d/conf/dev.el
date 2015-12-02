@@ -1,4 +1,3 @@
-(load "~/.emacs.d/conf/ruby.el")
-(load "~/.emacs.d/conf/scala.el")
-(load "~/.emacs.d/conf/javascript.el")
-(load "~/.emacs.d/conf/css.el")
+(setq files-to-load (list "haskell" "ruby" "scala" "javascript" "css"))
+
+(load-files files-to-load)
