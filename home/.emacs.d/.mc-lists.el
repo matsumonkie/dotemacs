@@ -10,6 +10,7 @@
         coffee-newline-and-indent
         dabbrev-expand
         haskell-indentation-newline-and-indent
+        markdown-enter-key
         my-forward-block
         ruby-electric-close-matching-char
         ruby-electric-space

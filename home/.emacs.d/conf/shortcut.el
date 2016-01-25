@@ -55,7 +55,6 @@
 (define-key minibuffer-local-map (kbd "<down>") 'next-history-element)
 
 
-
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; ;;;;; EDITION SHORTCUT ;;;;;;;
 ;; ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;

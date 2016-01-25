@@ -5,7 +5,7 @@
 
   ;; auto compile elisp configuration files after save
   (add-hook 'emacs-lisp-mode-hook
-	    (lambda () (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
+            (lambda () (add-hook 'after-save-hook 'emacs-lisp-byte-compile t t)))
 
   (defvar my-conf-path "~/.emacs.d/conf")
   (defvar load-path (cons my-conf-path load-path))
