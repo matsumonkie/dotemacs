@@ -10,6 +10,7 @@
         coffee-newline-and-indent
         dabbrev-expand
         haskell-indentation-newline-and-indent
+        kill-region
         markdown-enter-key
         my-forward-block
         ruby-electric-close-matching-char
@@ -22,9 +23,13 @@
 
 (setq mc/cmds-to-run-once
       '(
+        ace-jump-move
+        end-of-buffer
         end-of-visual-line
+        haml-electric-backspace
         kill-rectangle
         repeat
+        ruby-electric-bar
         tabbar-backward-tab
         tabbar-forward-tab
         ))

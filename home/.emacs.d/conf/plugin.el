@@ -126,3 +126,7 @@
 ;; Jade
 (install-package 'jade-mode)
 (require 'jade-mode)
+
+;; Elm
+(install-package 'elm-mode)
+(require 'elm-mode)
