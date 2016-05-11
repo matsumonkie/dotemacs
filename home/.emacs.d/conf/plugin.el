@@ -130,3 +130,7 @@
 ;; Elm
 (install-package 'elm-mode)
 (require 'elm-mode)
+
+;; Csv
+(install-package 'csv-mode)
+(require 'csv-mode)

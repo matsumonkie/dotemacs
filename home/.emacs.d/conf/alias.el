@@ -64,3 +64,6 @@
 
 ;; visual line mode
 (defalias 'vlm 'visual-line-mode)
+
+;; artist mode
+(defalias 'draw 'artist-select-operation)
