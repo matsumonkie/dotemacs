@@ -12,6 +12,7 @@
         haskell-indentation-newline-and-indent
         kill-region
         markdown-enter-key
+        my-backward-kill-line
         my-forward-block
         ruby-electric-close-matching-char
         ruby-electric-space
@@ -27,6 +28,7 @@
         end-of-buffer
         end-of-visual-line
         haml-electric-backspace
+        haskell-mode-contextual-space
         kill-rectangle
         repeat
         ruby-electric-bar

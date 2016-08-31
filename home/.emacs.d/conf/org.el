@@ -13,5 +13,5 @@
 
 ; agenda-files
 (setq org-agenda-files (list "~/.org/perso.org"
-                             "~/.org/selectra.org"
+                             "~/.org/medrefer.org"
 ))

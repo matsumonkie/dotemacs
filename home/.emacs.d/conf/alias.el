@@ -67,3 +67,7 @@
 
 ;; artist mode
 (defalias 'draw 'artist-select-operation)
+
+;; vimish fold
+(defalias 'fold 'vimish-fold)
+(defalias 'unfold 'vimish-fold-unfold)

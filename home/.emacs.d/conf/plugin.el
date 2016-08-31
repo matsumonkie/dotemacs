@@ -34,6 +34,7 @@
 (ido-mode 1)
 (ido-everywhere 1)
 (flx-ido-mode 1)
+(setq ido-enable-flex-matching t)
 ;; disable ido faces to see flx highlights.
 (setq ido-use-faces nil)
 
@@ -41,12 +42,7 @@
 (install-package 'projectile)
 (projectile-global-mode)
 (global-set-key (kbd "C-SPC a") 'projectile-find-file)
-
-;; Yari
-(install-package 'yari)
-(defun ri-bind-key ()
-  (local-set-key [f1] 'yari))
-(add-hook 'ruby-mode-hook 'ri-bind-key)
+(global-set-key (kbd "C-SPC p") 'projectile-find-file-in-directory)
 
 ;; Ace jump mode
 (install-package 'ace-jump-mode)
@@ -83,20 +79,8 @@
       '(("erb"  . (("open" "close")))
         ("php"  . (("open" "close")
                    ("open" "close")))
-       ))
+        ))
 (setq web-mode-enable-auto-pairing t)
-
-;; git gutter
-(install-package 'git-gutter)
-(global-git-gutter-mode t)
-(git-gutter:linum-setup)
-(add-hook 'ruby-mode-hook 'git-gutter-mode)
-
-;; Smex
-(install-package 'smex)
-(require 'smex) ; Not needed if you use package.el
-(smex-initialize)
-(global-set-key (kbd "C-SPC SPC") 'smex)
 
 ;; coffee mode
 (install-package 'coffee-mode)
@@ -110,7 +94,7 @@
 (install-package 'markdown-mode)
 (require 'markdown-mode)
 (autoload 'markdown-mode "markdown-mode"
-   "Major mode for editing Markdown files" t)
+  "Major mode for editing Markdown files" t)
 (custom-set-variables
  '(markdown-command "rdiscount"))
 
@@ -120,7 +104,7 @@
 (require 'erc-match)
 (setq erc-keywords '("iori" "itsu"))
 (setq erc-autojoin-channels-alists
-  '(("freenode.net" "#emacs" "#haskell")))
+      '(("freenode.net" "#emacs" "#haskell")))
 (add-to-list 'erc-nick "itsu")
 
 ;; Jade
@@ -134,3 +118,7 @@
 ;; Csv
 (install-package 'csv-mode)
 (require 'csv-mode)
+
+;; Vimish Fold
+(install-package 'vimish-fold)
+(require 'vimish-fold)
