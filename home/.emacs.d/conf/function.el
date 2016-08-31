@@ -362,8 +362,6 @@
     (if (unfolded-region-p overlay)
         (vimish-fold-toggle))))
 
-(global-set-key (kbd "C-SPC t") 'my-fold-toggle)
-
 (defun folded-region-p (overlay)
   ""
   (eq (overlay-get overlay 'type) 'vimish-fold--folded))

@@ -122,3 +122,4 @@
 ;; Vimish Fold
 (install-package 'vimish-fold)
 (require 'vimish-fold)
+(global-set-key (kbd "C-SPC t") 'my-fold-toggle)
