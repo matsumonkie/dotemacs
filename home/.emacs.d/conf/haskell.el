@@ -8,7 +8,8 @@
 (custom-set-variables
  '(haskell-process-suggest-remove-import-lines t)
  '(haskell-process-auto-import-loaded-modules t)
- '(haskell-process-log t))
+ '(haskell-process-log t)
+ '(haskell-interactive-popup-errors nil))
 
 (define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
 (define-key haskell-mode-map (kbd "C-x") 'haskell-interactive-bring)
@@ -21,6 +22,8 @@
 (define-key haskell-mode-map (kbd "M-s") 'haskell-interactive-mode-history-previous)
 (define-key haskell-mode-map (kbd "M-r") 'haskell-interactive-mode-history-next)
 (define-key haskell-mode-map (kbd "C-c C-m") 'my-load-and-execute)
+
+(define-key haskell-cabal-mode-map (kbd "M-m") 'tabbar-forward-tab)
 
 (defun my-load-and-execute2 ()
   (interactive)

@@ -346,14 +346,24 @@
                (set-visited-file-name new-name)
                (set-buffer-modified-p nil)
                (message "File '%s' successfully renamed to '%s'" name (file-name-nondirectory new-name))))))))
+
+;; Folding
+
 (defun my-fold-toggle ()
   "toggle fold/unfold of paragraph under the mark"
   (interactive)
   (let
       ((overlays (overlays-at (point))))
     (if overlays
-        (-map 'my-fold (overlays-at (point)))
-      (my-fold-paragraph))))
+        (if (not (-map 'my-fold (overlays-at (point))))
+            (progn
+              (message "")
+              (my-fold-paragraph)))
+      (if (use-region-p)
+          (progn
+            (message "folding manual region")
+            (vimish-fold beginning end))
+        (my-fold-paragraph)))))
 
 (defun my-fold (overlay)
   ""
