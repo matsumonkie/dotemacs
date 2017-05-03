@@ -11,7 +11,7 @@
  '(haskell-process-log t)
  '(haskell-interactive-popup-errors nil))
 
-(define-key haskell-mode-map (kbd "C-c C-l") 'haskell-process-load-file)
+(define-key haskell-mode-map (kbd "C-c C-l") 'my-haskell-process-load-file)
 (define-key haskell-mode-map (kbd "C-x") 'haskell-interactive-bring)
 (define-key haskell-mode-map (kbd "C-x") 'haskell-interactive-at-prompt)
 (define-key haskell-mode-map (kbd "C-c C-t") 'haskell-process-do-type)
@@ -25,54 +25,18 @@
 
 (define-key haskell-cabal-mode-map (kbd "M-m") 'tabbar-forward-tab)
 
-(defun my-load-and-execute2 ()
+(defun my-haskell-process-load-file ()
   (interactive)
-  "load or reload code and execute the m function if present"
-  (haskell-process-load-file)
-  (with-current-buffer "*moneylender*"
-    (haskell-interactive-mode-clear)
-    (insert "main ")
-    (let ((expr (haskell-interactive-mode-input)))
-      (foo expr))))
+  "clear console & load code"
+    (when (fboundp 'haskell-interactive-mode-clear) haskell-interactive-mode-clear)
+    (haskell-process-load-file)
+  )
 
 (defun my-load-and-execute ()
   (interactive)
   "load or reload code and execute the m function if present"
-  (haskell-process-load-file)
-  (message (format "try %s" (haskell-session))))
-
-(defun foo (expr)
-  "Run the given expression."
-  (let ((session (haskell-interactive-session))
-        (process (haskell-interactive-process)))
-    (haskell-process-queue-command
-     process
-     (make-haskell-command
-      :state (list session process expr 0)
-      :go (lambda (state)
-            (with-current-buffer "*moneylender*"
-              (goto-char (point-max))
-              (insert "\n")
-              )
-            (setq haskell-interactive-mode-result-end
-                  (point-max))
-            (haskell-process-send-string (cadr state)
-                                         (haskell-interactive-mode-multi-line (cl-caddr state)))
-            (haskell-process-set-evaluating (cadr state) t)
-            )
-      :live (lambda (state buffer)
-              (unless (and (string-prefix-p ":q" (cl-caddr state))
-                           (string-prefix-p (cl-caddr state) ":quit"))
-                (let* ((cursor (cl-cadddr state))
-                       (next (replace-regexp-in-string
-                              haskell-process-prompt-regex
-                              ""
-                              (substring buffer cursor))))
-                  (haskell-interactive-mode-eval-result (car state) next)
-                  (setf (cl-cdddr state) (list (length buffer)))
-                  nil)))
-      :complete
-      (lambda (state response)
-        (haskell-process-set-evaluating (cadr state) nil)
-        (unless (haskell-interactive-mode-trigger-compile-error state response)
-          (haskell-interactive-mode-expr-result state response)))))))
+  (save-excursion
+    (haskell-interactive-mode-clear)
+    (haskell-process-reload)
+    (haskell-interactive-mode-run-expr "main")
+  ))

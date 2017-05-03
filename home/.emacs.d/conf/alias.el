@@ -2,7 +2,7 @@
 (defalias 'r 'query-replace)
 
 ;; Line mode
-(defalias 'glm 'global-hl-line-mode)
+(defalias 'hl 'global-hl-line-mode)
 
 ;; Macro
 (defalias 'sm 'start-kbd-macro)
@@ -57,6 +57,8 @@
 (defalias 'o 'other-window)
 (defalias 'q 'delete-window)
 (defalias 'f 'delete-other-windows)
+(defalias 'eh 'enlarge-window-horizontally)
+(defalias 'ev 'enlarge-window)
 
 ;; copy/paste
 (defalias 'cc 'copy-to-clipboard)
