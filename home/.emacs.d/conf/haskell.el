@@ -28,7 +28,8 @@
 (defun my-haskell-process-load-file ()
   (interactive)
   "clear console & load code"
-    (when (fboundp 'haskell-interactive-mode-clear) haskell-interactive-mode-clear)
+  (when (fboundp 'haskell-interactive-mode-clear)
+    (haskell-interactive-mode-clear))
     (haskell-process-load-file)
   )
 
