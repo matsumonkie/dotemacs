@@ -20,6 +20,7 @@
         scroll-up-lot
         slim-electric-backspace
         string-rectangle
+        suspend-frame
         ))
 
 (setq mc/cmds-to-run-once

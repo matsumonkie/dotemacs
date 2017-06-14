@@ -59,6 +59,8 @@
 (defalias 'f 'delete-other-windows)
 (defalias 'eh 'enlarge-window-horizontally)
 (defalias 'ev 'enlarge-window)
+(defalias 'sh 'shrink-window-horizontally)
+(defalias 'sv 'shrink-window)
 
 ;; copy/paste
 (defalias 'cc 'copy-to-clipboard)
