@@ -42,7 +42,8 @@
 (install-package 'projectile)
 (projectile-global-mode)
 (global-set-key (kbd "C-SPC a") 'projectile-find-file)
-(global-set-key (kbd "C-SPC p") 'projectile-find-file-in-directory)
+;(global-set-key (kbd "C-SPC d") 'projectile-find-file-in-directory)
+(global-set-key (kbd "C-SPC p") 'projectile-switch-project)
 
 ;; Ace jump mode
 (install-package 'ace-jump-mode)
