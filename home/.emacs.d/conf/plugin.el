@@ -76,6 +76,7 @@
 (install-package 'web-mode)
 (require 'web-mode)
 (add-to-list 'auto-mode-alist '("\\.erb\\'" . web-mode))
+(add-to-list 'auto-mode-alist '("\\.scss\\'" . web-mode))
 (setq web-mode-extra-auto-pairs
       '(("erb"  . (("open" "close")))
         ("php"  . (("open" "close")
