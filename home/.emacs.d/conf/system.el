@@ -84,7 +84,7 @@
 (setq blink-matching-paren t
  blink-matching-paren-on-screen t
  blink-matching-paren-dont-ignore-comments t)
-(set-face-background 'show-paren-match-face "green")
+;;(set-face-background 'show-paren-match "green")
 
 ;; Automatic completion
 (require 'dabbrev)

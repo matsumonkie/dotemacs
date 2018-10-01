@@ -31,6 +31,11 @@
 (global-set-key [f4] 'kill-emacs)
 (global-set-key (kbd "C-k") 'my-kill-buffer)
 
+;(setq ns-right-alternate-modifier nil)
+;(setq x-super-keysym 'meta)
+;(setq mac-option-key-is-meta t)
+;(setq mac-right-option-modifier nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; BUFFER MENU
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -126,12 +131,6 @@
 ;; BUFFER
 (global-set-key "\M-d" 'beginning-of-buffer)
 (global-set-key "\M-l" 'end-of-buffer)
-
-;; PAGE
-(global-set-key "\M-t" 'scroll-down-command)
-(global-set-key "\M-n" 'scroll-up-command)
-
-
 
 ;;;;;;;;;
 ;; DEV ;;
