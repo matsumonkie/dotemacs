@@ -175,6 +175,9 @@
 (global-unset-key (kbd "C-@ C-@"))
 (global-set-key (kbd "C-SPC C-SPC") 'execute-extended-command)
 
+(global-set-key (kbd "C-e") 'move-end-of-line)
+(global-set-key (kbd "C-a") 'move-beginning-of-line)
+
 ;; Go 2 lines up or down
 (global-set-key (kbd "\C-s") 'scroll-up-lot)
 (global-set-key (kbd "\C-r") 'scroll-down-lot)
