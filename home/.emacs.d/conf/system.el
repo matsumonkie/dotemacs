@@ -91,7 +91,8 @@
 (set 'dabbrev-case-fold-search nil)
 (set 'dabbrev-case-replace nil)
 (global-set-key [(f1)] 'dabbrev-completion)
-(global-set-key (kbd "\C-q") (quote dabbrev-expand))
+(global-set-key (kbd "C-y") (quote dabbrev-expand))
+(global-set-key (kbd "M-y") (quote dabbrev-completion))
 
 ;; Mode associated to file extension
 (setq auto-mode-alist

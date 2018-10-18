@@ -7,7 +7,7 @@
 ;; BASIC COMMAND
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 (global-set-key (kbd "C-SPC")   'Control-X-prefix)
-(global-set-key (kbd "C-e")     'set-mark-command)
+(global-set-key (kbd "C-q")     'set-mark-command)
 (global-set-key (kbd "M-SPC")   'execute-extended-command)
 (global-set-key (kbd "C-SPC u") 'universal-argument)
 
@@ -140,9 +140,9 @@
 (define-key global-map (kbd "C-SPC .") 'comment-line)
 (define-key global-map (kbd "C-SPC :") 'uncomment-line)
 
-(keyboard-translate ?\C-y ?\C-é)
+;(keyboard-translate ?\C-y ?\C-é)
 ;(global-set-key (kbd "é") "y")
-(global-set-key (kbd "C-y") 'my-copy-line)
+;(global-set-key (kbd "C-y") 'my-copy-line)
 
 (global-set-key (kbd "C-SPC i") 'indent-region)
 
@@ -181,13 +181,6 @@
 ;; Go 2 lines up or down
 (global-set-key (kbd "\C-s") 'scroll-up-lot)
 (global-set-key (kbd "\C-r") 'scroll-down-lot)
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;; Completion automatique ;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-(global-set-key [(f1)] 'dabbrev-completion)
-(global-set-key (kbd "C-q") 'dabbrev-expand)
-(global-set-key (kbd "M-q") 'dabbrev-completion)
 
 (global-set-key (kbd "M-<down>") 'move-line-region-down)
 (global-set-key (kbd "M-<up>") 'move-line-region-up)
