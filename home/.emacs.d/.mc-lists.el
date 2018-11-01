@@ -9,6 +9,7 @@
         coffee-dedent-line-backspace
         coffee-newline-and-indent
         dabbrev-expand
+        haskell-indentation-common-electric-command
         haskell-indentation-newline-and-indent
         kill-region
         markdown-enter-key

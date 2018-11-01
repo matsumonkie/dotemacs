@@ -31,9 +31,9 @@
     (load-theme 'tangotango t)))
 
 ;; Underline current line
-(global-hl-line-mode 1)
-(set-face-background 'hl-line "#111")
-(set-face-foreground 'highlight nil)
+;(global-hl-line-mode 1)
+;(set-face-background 'hl-line "#111")
+;(set-face-foreground 'highlight nil)
 
 ;; Tabbar
 (require 'tabbar)
