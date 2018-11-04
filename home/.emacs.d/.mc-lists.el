@@ -32,6 +32,7 @@
         haml-electric-backspace
         haskell-mode-contextual-space
         kill-rectangle
+        outshine-self-insert-command
         repeat
         ruby-electric-bar
         tabbar-backward-tab

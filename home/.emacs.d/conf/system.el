@@ -123,3 +123,6 @@
 
 ;; No scratch buffer
 ;;(kill-buffer "*scratch*")
+
+(setq dired-recursive-deletes 'always)
+(setq dired-recursive-copies 'always)

@@ -1,4 +1,5 @@
-;; Haskell mode
+;;; Package
+
 (install-package 'haskell-mode)
 (require 'haskell-mode)
 (require 'haskell-interactive-mode)
@@ -29,6 +30,8 @@
 (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
 
 (custom-set-variables '(haskell-stylish-on-save t))
+
+;;; Shortcuts
 
 (eval-after-load "haskell-mode"
   '(progn
