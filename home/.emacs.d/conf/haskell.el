@@ -29,7 +29,9 @@
 (custom-set-variables '(haskell-tags-on-save t))
 (define-key haskell-mode-map (kbd "M-.") 'haskell-mode-tag-find)
 
-(custom-set-variables '(haskell-stylish-on-save t))
+;; somehow this settings remove the pragma: {-# LANGUAGE ViewPatterns #-} on every save...
+;;(custom-set-variables '(haskell-stylish-on-save t))
+
 
 ;;; Shortcuts
 
